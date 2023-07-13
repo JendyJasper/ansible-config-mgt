@@ -20,5 +20,5 @@
 
 - name: restart apache
   service:
-      name: httpd
+      name: apache2
       state: restarted
