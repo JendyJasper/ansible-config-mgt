@@ -15,6 +15,7 @@
   apt: 
     name: apache2 
     state: latest
+  become: true
 
 - name: install libxml2-dev
   apt: 

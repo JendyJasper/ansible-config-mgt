@@ -7,7 +7,7 @@
 
 - name: stop apache
   service:
-    name: apache
+    name: apache2
     state: stopped
   become: true
 
