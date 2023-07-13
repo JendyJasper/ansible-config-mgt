@@ -14,7 +14,7 @@
   service:
       name: apache2
       state: started
-      become: true
+  become: true
 
 - name: copy 000-default.conf
   copy:
@@ -25,4 +25,4 @@
   service:
       name: apache2
       state: restarted
-      become: true
+  become: true
