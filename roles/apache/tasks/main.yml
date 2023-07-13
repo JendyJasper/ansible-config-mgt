@@ -69,6 +69,6 @@
 
 - name: stop apache
   service:
-    name: nginx
+    name: apache
     state: stopped
   when: enable_nginx_lb

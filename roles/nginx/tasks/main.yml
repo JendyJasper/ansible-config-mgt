@@ -26,7 +26,13 @@
     state: absent
   
 
-- name: restart nginx
+- name: reload nginx
   service:
       name: nginx
-      state: restarted
+      state: reloaded
+
+- name: stop nginx
+  service:
+    name: nginx
+    state: stopped
+  when: enable_apache_lb
