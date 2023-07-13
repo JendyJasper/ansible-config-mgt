@@ -20,3 +20,8 @@
 -  hosts: uat-webservers
 - name: uat-webservers assignment
   import_playbook: ../static-assignments/uat-webservers.yml
+
+- hosts: uat-database
+  roles:
+    - role: mysql
+      become: yes
