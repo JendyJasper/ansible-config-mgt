@@ -122,12 +122,12 @@ mysql_users:
   - name: webaccess
     host: 172.31.92.174
     password: password
-    priv: "*.*:USAGE"
+    priv: "*.*:ALL,GRANT"
 
   - name: webaccess2
     host: 172.31.92.174
     password: password
-    priv: "*.*:USAGE"
+    priv: "*.*:ALL,GRANT"
 
 mysql_disable_log_bin: false
 
