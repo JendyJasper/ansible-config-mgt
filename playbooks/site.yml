@@ -25,7 +25,12 @@
 # - name: uat-database configuration
 #   import_playbook: ../static-assignments/uat-database.yml
 
-- hosts: lb
-- name: uat-lb configuration
-  import_playbook: ../static-assignments/uat-lb.yml
+# - hosts: lb
+# - name: uat-lb configuration
+#   import_playbook: ../static-assignments/uat-lb.yml
+
+- name: Loadbalancers assignment
+  hosts: lb
+- import_playbook: ../static-assignments/loadbalancers.yml
+  when: load_balancer_is_required 
 
