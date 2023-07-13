@@ -19,7 +19,7 @@
 
 - apache2_module:
     state: present
-    name: proxy
+    name: Proxy
   become: true
 
 
