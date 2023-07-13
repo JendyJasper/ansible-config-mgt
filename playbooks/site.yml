@@ -17,9 +17,9 @@
   tags:
     - always
 
-- hosts: uat-webservers
-- name: uat-webservers assignment
-  import_playbook: ../static-assignments/uat-webservers.yml
+# - hosts: uat-webservers
+# - name: uat-webservers assignment
+#   import_playbook: ../static-assignments/uat-webservers.yml
 
 - hosts: uat-database
 - name: uat-database configuration
