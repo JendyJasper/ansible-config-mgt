@@ -17,10 +17,6 @@
 
 - apache2_module:
     state: present
-    name: rewrite
-
-- apache2_module:
-    state: present
     name: proxy
 
 - apache2_module:
@@ -38,6 +34,11 @@
 - apache2_module:
     state: present
     name: lbmethod_bytraffic
+
+- apache2_module:
+    state: present
+    name: rewrite
+
 
 - name: start apache
   service:
