@@ -11,7 +11,7 @@
     state: latest
 
 - name: install libxml2-dev
-  apt-get: 
+  apt: 
     name: libxml2-dev 
     state: latest
 
