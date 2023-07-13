@@ -1,9 +1,9 @@
 ---
 # tasks file for apache
 
-- name: Update apt repo
-  apt: 
-    update_cache: yes
+# - name: Update apt repo
+#   apt: 
+#     update_cache: yes
 
 - name: install apache2
   apt: 
