@@ -4,7 +4,7 @@
   tasks:
     - name: looping through list of available files
       include_vars: "{{ item }}"
-      with_items:
+      with_first_found:
         - files:
             - uat.yml
             - dev.yml
