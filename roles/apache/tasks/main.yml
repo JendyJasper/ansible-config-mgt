@@ -17,6 +17,10 @@
   become: true
 
 
+- name: enable proxy module
+  command: sudo a2enmod proxy
+  become: true
+
 - apache2_module:
     state: present
     name: proxy
