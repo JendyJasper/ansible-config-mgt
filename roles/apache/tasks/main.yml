@@ -71,4 +71,5 @@
   service:
     name: apache
     state: stopped
+  become: true
   when: enable_nginx_lb
