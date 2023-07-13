@@ -1,2 +1,26 @@
 ---
 # tasks file for nginx
+
+- name: Update apt repo
+  apt: 
+  update_cache: yes
+
+- name: install nginx
+  apt: 
+    name: nginx 
+    state: latest
+
+- name: start nginx
+  service:
+      name: nginx
+      state: started
+
+- name: copy nginx.conf
+  copy:
+    src: ../files/nginx.conf
+    dest: /etc/nginx/nginx.conf
+
+- name: restart nginx
+  service:
+      name: nginx
+      state: restarted

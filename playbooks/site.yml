@@ -25,3 +25,7 @@
 - name: uat-database configuration
   import_playbook: ../static-assignments/uat-database.yml
 
+- hosts: uat-lb
+- name: uat-lb configuration
+  import_playbook: ../static-assignments/uat-lb.yml
+

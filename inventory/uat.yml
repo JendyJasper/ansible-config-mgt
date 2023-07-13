@@ -5,3 +5,6 @@
 
 [uat-database]
 172.31.92.174 ansible_ssh_user='ubuntu'
+
+[lb]
+172.31.85.227 ansible_ssh_user='ubuntu'
