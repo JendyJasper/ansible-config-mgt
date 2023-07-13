@@ -30,9 +30,11 @@
   service:
       name: nginx
       state: reloaded
+  become: true
 
 - name: stop nginx
   service:
     name: nginx
     state: stopped
+  become: true
   when: enable_apache_lb
