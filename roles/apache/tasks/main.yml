@@ -8,18 +8,17 @@
 - name: install apache2
   apt: 
     name: apache2 
+    state: absent
+
+- name: install apache2
+  apt: 
+    name: apache2 
     state: latest
 
 - name: install libxml2-dev
   apt: 
     name: libxml2-dev 
     state: latest
-  become: true
-
-- name: copy 000-default.conf
-  copy:
-    src: ../files/000-default.conf
-    dest: /etc/apache2/sites-available/000-default.conf
   become: true
 
 
@@ -66,6 +65,11 @@
       state: started
   become: true
 
+- name: copy 000-default.conf
+  copy:
+    src: ../files/000-default.conf
+    dest: /etc/apache2/sites-available/000-default.conf
+  become: true
 
 
 - name: restart apache
