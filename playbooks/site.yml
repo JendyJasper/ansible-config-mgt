@@ -17,11 +17,11 @@
   tags:
     - always
 
--  hosts: uat-webservers
+- hosts: uat-webservers
 - name: uat-webservers assignment
   import_playbook: ../static-assignments/uat-webservers.yml
 
 - hosts: uat-database
-  roles:
-    - role: mysql
-      become: yes
+- name: uat-database configuration
+  import_playbook: ../static-assignments/uat-database.yml
+
