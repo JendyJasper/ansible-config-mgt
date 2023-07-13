@@ -20,6 +20,10 @@
     src: ../files/nginx.conf
     dest: /etc/nginx/nginx.conf
 
+- name: remove nginx default welcome page
+  command: rm /etc/nginx/sites-enabled/default
+  become: yes
+
 - name: restart nginx
   service:
       name: nginx
