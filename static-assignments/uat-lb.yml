@@ -1,5 +1,5 @@
 ---
-- hosts: uat-lb
+- hosts: lb
   roles:
     - role: nginx
       become: yes
