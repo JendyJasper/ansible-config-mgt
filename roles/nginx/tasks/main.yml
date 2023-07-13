@@ -37,5 +37,4 @@
     name: nginx
     state: stopped
   become: true
-- import_playbook: ../static-assignments/uat-lb.yml
   when: enable_apache_lb
