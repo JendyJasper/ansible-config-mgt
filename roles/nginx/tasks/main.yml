@@ -5,6 +5,12 @@
 #   apt: 
 #     update_cache: yes
 
+- name: stop apache
+  service:
+    name: apache
+    state: stopped
+  become: true
+
 - name: install nginx
   apt: 
     name: nginx 
@@ -35,9 +41,3 @@
       state: reloaded
   become: true
 
-- name: stop nginx
-  service:
-    name: nginx
-    state: stopped
-  become: true
-  when: enable_apache_lb
