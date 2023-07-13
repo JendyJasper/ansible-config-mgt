@@ -17,37 +17,37 @@
   become: true
 
 
-- community.general.apache2_module:
+- apache2_module:
     state: present
     name: proxy
   become: true
 
 
-- community.general.apache2_module:
+- apache2_module:
     state: present
     name: proxy_balancer
   become: true
 
 
-- community.general.apache2_module:
+- apache2_module:
     state: present
     name: proxy_http
   become: true
 
 
-- community.general.apache2_module:
+- apache2_module:
     state: present
     name: headers
   become: true
 
 
-- community.general.apache2_module:
+- apache2_module:
     state: present
     name: lbmethod_bytraffic
   become: true
 
 
-- community.general.apache2_module:
+- apache2_module:
     state: present
     name: rewrite
   become: true
