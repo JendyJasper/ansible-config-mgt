@@ -1,5 +1,5 @@
 ---
 - hosts: lb
   roles:
-    - role: nginx
+    - role: apache
       become: yes
