@@ -48,6 +48,12 @@
       state: restarted
   become: true
 
+- name: copy ports.conf
+  copy:
+    src: ../files/ports.conf
+    dest: /etc/apache2/ports.conf
+  become: true
+
 - name: copy 000-default.conf
   copy:
     src: ../files/000-default.conf
