@@ -10,6 +10,35 @@
     name: apache2 
     state: latest
 
+- name: install libxml2-dev
+  apt-get: 
+    name: libxml2-dev 
+    state: latest
+
+- apache2_module:
+    state: present
+    name: rewrite
+
+- apache2_module:
+    state: present
+    name: proxy
+
+- apache2_module:
+    state: present
+    name: proxy_balancer
+
+- apache2_module:
+    state: present
+    name: proxy_http
+
+- apache2_module:
+    state: present
+    name: headers
+
+- apache2_module:
+    state: present
+    name: lbmethod_bytraffic
+
 - name: start apache
   service:
       name: apache2
