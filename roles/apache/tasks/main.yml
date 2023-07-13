@@ -18,44 +18,28 @@
 
 
 - name: enable proxy module
-  command: sudo a2enmod proxy
+  command: a2enmod proxy
   become: true
 
-- apache2_module:
-    state: present
-    name: proxy
+- name: enable proxy_balancer module
+  command: a2enmod proxy_balancer
   become: true
 
-
-- apache2_module:
-    state: present
-    name: proxy_balancer
+- name: enable proxy_http module
+  command: a2enmod proxy_http
   become: true
 
-
-- apache2_module:
-    state: present
-    name: proxy_http
+- name: enable headers module
+  command: a2enmod headers
   become: true
 
-
-- apache2_module:
-    state: present
-    name: headers
+- name: enable lbmethod_bytraffic module
+  command: a2enmod lbmethod_bytraffic
   become: true
 
-
-- apache2_module:
-    state: present
-    name: lbmethod_bytraffic
+- name: enable rewrite module
+  command: a2enmod rewrite
   become: true
-
-
-- apache2_module:
-    state: present
-    name: rewrite
-  become: true
-
 
 
 - name: restart apache
