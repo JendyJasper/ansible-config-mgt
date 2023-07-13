@@ -16,6 +16,11 @@
     state: latest
   become: true
 
+- name: restart apache
+  service:
+      name: apache2
+      state: restarted
+  become: true
 
 - apache2_module:
     state: present
@@ -54,11 +59,11 @@
 
 
 
-- name: start apache
-  service:
-      name: apache2
-      state: started
-  become: true
+# - name: start apache
+#   service:
+#       name: apache2
+#       state: started
+#   become: true
 
 - name: copy 000-default.conf
   copy:
