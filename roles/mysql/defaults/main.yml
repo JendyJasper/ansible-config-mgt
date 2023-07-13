@@ -113,11 +113,11 @@ mysql_databases:
   replicate: 1
 
 # Users.
-mysql_users:
+mysql_users: 
   - name: webaccess
     host: 172.31.92.174
     password: password
-    priv: *.*USAGE
+    priv: "*.*:USAGE"
 
 mysql_disable_log_bin: false
 
