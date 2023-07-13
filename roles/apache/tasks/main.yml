@@ -8,11 +8,6 @@
 - name: install apache2
   apt: 
     name: apache2 
-    state: absent
-
-- name: install apache2
-  apt: 
-    name: apache2 
     state: latest
 
 - name: install libxml2-dev
@@ -59,10 +54,10 @@
 
 
 
-- name: start apache
+- name: restart apache
   service:
       name: apache2
-      state: started
+      state: restarted
   become: true
 
 - name: copy 000-default.conf
