@@ -11,25 +11,25 @@
     state: stopped
   become: true
 
-- name: install apache2
-  apt: 
-    name: apache2 
-    state: latest
-  become: true
-
-- name: install libxml2-dev
-  apt: 
-    name: libxml2-dev 
-    state: latest
-  become: true
-
-# - name: install apache2 and libxml2-dev 
+# - name: install apache2
 #   apt: 
-#     name: 
-#     - apache2 
-#     - libxml2-dev 
+#     name: apache2 
 #     state: latest
 #   become: true
+
+# - name: install libxml2-dev
+#   apt: 
+#     name: libxml2-dev 
+#     state: latest
+#   become: true
+
+- name: install apache2 and libxml2-dev 
+  apt: 
+    name: 
+    - apache2 
+    - libxml2-dev 
+    state: latest
+  become: true
 
 
 - name: enable proxy module
