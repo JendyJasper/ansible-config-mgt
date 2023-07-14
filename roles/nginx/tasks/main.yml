@@ -1,10 +1,4 @@
 ---
-# tasks file for nginx
-
-# - name: Update apt repo
-#   apt: 
-#     update_cache: yes
-
 - name: stop apache
   service:
     name: apache2

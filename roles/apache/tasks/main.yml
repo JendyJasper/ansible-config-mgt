@@ -1,10 +1,4 @@
 ---
-# tasks file for apache
-
-# - name: Update apt repo
-#   apt: 
-#     update_cache: yes
-
 - name: stop nginx
   service:
     name: nginx
@@ -21,7 +15,7 @@
     - libxml2-dev
 
 
-- name: enable modules
+- name: enable apache2 modules
   command: a2enmod {{ item }} 
   become: true
   loop:
@@ -31,12 +25,6 @@
     - headers
     - lbmethod_bytraffic
     - rewrite
-
-- name: restart apache
-  service:
-      name: apache2
-      state: restarted
-  become: true
 
 - name: copy ports.conf
   copy:

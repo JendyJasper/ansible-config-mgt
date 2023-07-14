@@ -1,15 +1,12 @@
 ---
-- name: install apache
+- name: install apache and git
   become: true
   ansible.builtin.yum:
-    name: "httpd"
+    name:  "{{ item}}"
     state: present
-
-- name: install git
-  become: true
-  ansible.builtin.yum:
-    name: "git"
-    state: present
+  loop:
+    - httpd
+    - git
 
 - name: clone a repo
   become: true
