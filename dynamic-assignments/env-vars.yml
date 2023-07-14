@@ -11,6 +11,6 @@
             - stage.yml
             - prod.yml
           paths:
-            - "{{ playbook_dir }}/../env-vars"
+            - "{{ playbook_dir }}/../env-vars/{{ item }}"
       tags:
         - always
