@@ -4,13 +4,11 @@
   tasks:
     - name: looping through list of available files
       include_vars: "{{ item }}"
-      with_first_found:
-        - loop:
-            - uat.yml
-            - dev.yml
-            - stage.yml
-            - prod.yml
-          paths:
-            - "{{ playbook_dir }}/../env-vars/{{ item }}"
+      # with_first_found:
+    - loop:
+        - "{{ playbook_dir }}/../env-vars/uat.yml"
+        - "{{ playbook_dir }}/../env-vars/dev.yml"
+        - "{{ playbook_dir }}/../env-vars/stage.yml"
+        - "{{ playbook_dir }}/../env-vars/prod.yml"
       tags:
         - always
