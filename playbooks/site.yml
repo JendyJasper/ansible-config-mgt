@@ -10,7 +10,7 @@
 
 ---
 # - hosts: uat-database, uat-webservers, lb
-- hosts: lb, uat-database
+- hosts: lb, uat-webservers, uat-database
 - name: Include dynamic variables 
   # tasks:
   #import_playbook: ../static-assignments/common.yml 
