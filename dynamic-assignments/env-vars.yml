@@ -5,7 +5,7 @@
     - name: looping through list of available files
       include_vars: "{{ item }}"
       with_first_found:
-        - files:
+        - loop:
             - uat.yml
             - dev.yml
             - stage.yml
