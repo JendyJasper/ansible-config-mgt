@@ -13,11 +13,12 @@
 
 - name: install apache2 and libxml2-dev 
   apt: 
-    name: 
-    - apache2 
-    - libxml2-dev 
+    name: {{ item }} 
     state: latest
   become: true
+  loop:
+    - apache2
+    - libxml2-dev
 
 
 - name: enable modules
@@ -30,32 +31,6 @@
     - headers
     - lbmethod_bytraffic
     - rewrite
-
-
-# - name: enable proxy module
-#   command: a2enmod proxy
-#   become: true
-
-# - name: enable proxy_balancer module
-#   command: a2enmod proxy_balancer
-#   become: true
-
-# - name: enable proxy_http module
-#   command: a2enmod proxy_http
-#   become: true
-
-# - name: enable headers module
-#   command: a2enmod headers
-#   become: true
-
-# - name: enable lbmethod_bytraffic module
-#   command: a2enmod lbmethod_bytraffic
-#   become: true
-
-# - name: enable rewrite module
-#   command: a2enmod rewrite
-#   become: true
-
 
 - name: restart apache
   service:
