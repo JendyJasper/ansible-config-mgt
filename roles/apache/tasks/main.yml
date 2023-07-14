@@ -21,14 +21,16 @@
 
 
 - name: enable modules
-  command: 
-    - a2enmod proxy
-    - a2enmod proxy_balancer
-    - a2enmod proxy_http
-    - a2enmod headers
-    - a2enmod lbmethod_bytraffic
-    - a2enmod rewrite
+  command: a2enmod {{ item }} 
   become: true
+  loop:
+    - proxy
+    - proxy_balancer
+    - proxy_http
+    - headers
+    - lbmethod_bytraffic
+    - rewrite
+
 
 # - name: enable proxy module
 #   command: a2enmod proxy
