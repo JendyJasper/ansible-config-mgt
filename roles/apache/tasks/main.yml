@@ -13,7 +13,7 @@
 
 - name: install apache2 and libxml2-dev 
   apt: 
-    name: {{ item }} 
+    name: "{{ item }}"
     state: latest
   become: true
   loop:
