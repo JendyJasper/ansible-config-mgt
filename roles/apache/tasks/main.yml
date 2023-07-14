@@ -11,18 +11,6 @@
     state: stopped
   become: true
 
-# - name: install apache2
-#   apt: 
-#     name: apache2 
-#     state: latest
-#   become: true
-
-# - name: install libxml2-dev
-#   apt: 
-#     name: libxml2-dev 
-#     state: latest
-#   become: true
-
 - name: install apache2 and libxml2-dev 
   apt: 
     name: 
@@ -32,29 +20,39 @@
   become: true
 
 
-- name: enable proxy module
-  command: a2enmod proxy
+- name: enable modules
+  command: 
+    - a2enmod proxy
+    - a2enmod proxy_balancer
+    - a2enmod proxy_http
+    - a2enmod headers
+    - a2enmod lbmethod_bytraffic
+    - a2enmod rewrite
   become: true
 
-- name: enable proxy_balancer module
-  command: a2enmod proxy_balancer
-  become: true
+# - name: enable proxy module
+#   command: a2enmod proxy
+#   become: true
 
-- name: enable proxy_http module
-  command: a2enmod proxy_http
-  become: true
+# - name: enable proxy_balancer module
+#   command: a2enmod proxy_balancer
+#   become: true
 
-- name: enable headers module
-  command: a2enmod headers
-  become: true
+# - name: enable proxy_http module
+#   command: a2enmod proxy_http
+#   become: true
 
-- name: enable lbmethod_bytraffic module
-  command: a2enmod lbmethod_bytraffic
-  become: true
+# - name: enable headers module
+#   command: a2enmod headers
+#   become: true
 
-- name: enable rewrite module
-  command: a2enmod rewrite
-  become: true
+# - name: enable lbmethod_bytraffic module
+#   command: a2enmod lbmethod_bytraffic
+#   become: true
+
+# - name: enable rewrite module
+#   command: a2enmod rewrite
+#   become: true
 
 
 - name: restart apache
