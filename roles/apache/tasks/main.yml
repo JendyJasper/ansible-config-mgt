@@ -45,6 +45,6 @@
   become: true
   notify: restart apache
 
-- name: restart apache
-  import_playbook: ../handlers/main.yml
-  when: load_balancer_is_required 
+
+handlers:
+      - import_tasks: ../handlers/main.yml
