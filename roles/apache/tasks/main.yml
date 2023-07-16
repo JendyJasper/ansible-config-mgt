@@ -1,11 +1,11 @@
 ---
 - name: stop nginx
+  import_tasks: ../handlers/main.yml
   service:
     name: nginx
     state: stopped
   become: true
   notify: restart apache
-  import_tasks: ../handlers/main.yml
 
 - name: install apache2 and libxml2-dev 
   apt: 
