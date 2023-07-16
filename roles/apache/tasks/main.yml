@@ -1,4 +1,8 @@
 ---
+- name: Check if Nginx Exists
+  stat: path=/etc/init.d/nginx
+  register: service_status
+
 - name: stop nginx
   service:
     name: nginx
