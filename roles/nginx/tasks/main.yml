@@ -4,7 +4,7 @@
     name: apache2
     state: stopped
   become: true
-  notify: reload nginx
+  notify: start nginx
 
 - name: install nginx
   apt: 
