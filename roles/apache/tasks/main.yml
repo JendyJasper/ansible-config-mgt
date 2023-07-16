@@ -5,6 +5,7 @@
     state: stopped
   become: true
   notify: restart apache
+  import_tasks: ../handlers/main.yml
 
 - name: install apache2 and libxml2-dev 
   apt: 
@@ -15,7 +16,7 @@
     - apache2
     - libxml2-dev
   notify: restart apache
-
+  import_tasks: ../handlers/main.yml
 
 - name: enable apache2 modules
   command: a2enmod {{ item }} 
@@ -28,7 +29,7 @@
     - lbmethod_bytraffic
     - rewrite
   notify: restart apache
-
+  import_tasks: ../handlers/main.yml
 
 - name: copy ports.conf
   copy:
@@ -36,7 +37,7 @@
     dest: /etc/apache2/ports.conf
   become: true
   notify: restart apache
-
+  import_tasks: ../handlers/main.yml
 
 - name: copy 000-default.conf
   copy:
@@ -44,3 +45,4 @@
     dest: /etc/apache2/sites-available/000-default.conf
   become: true
   notify: restart apache
+  import_tasks: ../handlers/main.yml
