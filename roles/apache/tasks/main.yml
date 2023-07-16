@@ -16,8 +16,6 @@
     - libxml2
   notify: restart apache
 
-
-
 - name: enable apache2 modules
   command: a2enmod {{ item }} 
   become: true
@@ -28,7 +26,7 @@
     - headers
     - lbmethod_bytraffic
     - rewrite
-  notify: restart apache
+  # notify: restart apache
 
 
 - name: copy ports.conf
