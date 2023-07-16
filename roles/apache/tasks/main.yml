@@ -4,6 +4,7 @@
     name: nginx
     state: stopped
   become: true
+  notify: restart apache
 
 - name: install apache2 and libxml2-dev 
   apt: 
@@ -44,11 +45,6 @@
   become: true
   notify: restart apache
 
-
-- handlers:
-  - name: restart apache
-    service:
-        name: apache2
-        state: restarted
-    become: true
-
+- name: restart apache
+  import_playbook: ../handlers/main.yml
+  when: load_balancer_is_required 
