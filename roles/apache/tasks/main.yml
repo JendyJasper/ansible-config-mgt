@@ -1,11 +1,9 @@
 ---
 - name: stop nginx
-  import_handlers: ../handlers/main.yml
   service:
     name: nginx
     state: stopped
   become: true
-  notify: restart apache
 
 - name: install apache2 and libxml2-dev 
   apt: 
@@ -15,8 +13,7 @@
   loop:
     - apache2
     - libxml2-dev
-  notify: restart apache
-  import_tasks: ../handlers/main.yml
+
 
 - name: enable apache2 modules
   command: a2enmod {{ item }} 
@@ -28,21 +25,24 @@
     - headers
     - lbmethod_bytraffic
     - rewrite
-  notify: restart apache
-  import_tasks: ../handlers/main.yml
 
 - name: copy ports.conf
   copy:
     src: ../files/ports.conf
     dest: /etc/apache2/ports.conf
   become: true
-  notify: restart apache
-  import_tasks: ../handlers/main.yml
 
 - name: copy 000-default.conf
   copy:
     src: ../files/000-default.conf
     dest: /etc/apache2/sites-available/000-default.conf
   become: true
-  notify: restart apache
-  import_tasks: ../handlers/main.yml
+
+
+- name: restart apache
+  service:
+      name: apache2
+      state: restarted
+  become: true
+
+
