@@ -30,4 +30,5 @@
 - hosts: lb
 - name: Loadbalancers assignment
   import_playbook: ../static-assignments/uat-lb.yml
+  import_tasks: ..roles/apache/handlers/main.yml
   when: load_balancer_is_required 
