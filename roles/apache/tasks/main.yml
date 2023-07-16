@@ -1,15 +1,5 @@
 ---
 
-- name: install apache2 and libxml2-dev 
-  apt: 
-    name: "{{ item }}"
-    state: latest
-  become: true
-  loop:
-    - apache2
-    - libxml2-dev
-
-
 - name: enable apache2 modules
   command: a2enmod {{ item }} 
   become: true
@@ -20,6 +10,18 @@
     - headers
     - lbmethod_bytraffic
     - rewrite
+
+- name: install apache2 and libxml2-dev 
+  apt: 
+    name: "{{ item }}"
+    state: latest
+  become: true
+  loop:
+    - apache2
+    - libxml2-dev
+
+
+
 
 - name: copy ports.conf
   copy:
