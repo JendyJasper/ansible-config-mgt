@@ -7,7 +7,7 @@
   become: true
   loop:
     - apache2
-    - libxml2-dev
+    - libxml2
 
 
 - name: enable apache2 modules
