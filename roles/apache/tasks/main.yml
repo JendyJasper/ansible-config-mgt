@@ -1,10 +1,10 @@
 ---
-# - name: stop nginx
-#   service:
-#     name: nginx
-#     state: stopped
-#   become: true
-#   notify: restart apache
+- name: stop nginx
+  service:
+    name: nginx
+    state: stopped
+  become: true
+  notify: restart apache
 
 - name: install apache2 and libxml2-dev 
   apt: 
@@ -26,7 +26,7 @@
     - headers
     - lbmethod_bytraffic
     - rewrite
-  # notify: restart apache
+  notify: restart apache
 
 
 - name: copy ports.conf
@@ -43,12 +43,5 @@
   become: true
   notify: restart apache
 
-
-
-# - name: restart apache
-#   service:
-#       name: apache2
-#       state: restarted
-#   become: true
 
 
