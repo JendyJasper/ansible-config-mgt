@@ -3,6 +3,7 @@
   service:
     name: nginx
     state: stopped
+    when: service_status.stat.exists
   become: true
   notify: restart apache
 
