@@ -1,9 +1,4 @@
 ---
-- name: stop nginx
-  service:
-    name: nginx
-    state: stopped
-  become: true
 
 - name: install apache2 and libxml2-dev 
   apt: 
@@ -38,6 +33,11 @@
     dest: /etc/apache2/sites-available/000-default.conf
   become: true
 
+- name: stop nginx
+  service:
+    name: nginx
+    state: stopped
+  become: true
 
 - name: restart apache
   service:
