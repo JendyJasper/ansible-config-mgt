@@ -4,6 +4,7 @@
     name: nginx
     state: stopped
   become: true
+  notify: restart apache
 
 - name: install apache2 and libxml2-dev 
   apt: 
@@ -13,6 +14,8 @@
   loop:
     - apache2
     - libxml2-dev
+  notify: restart apache
+
 
 
 - name: enable apache2 modules
@@ -25,24 +28,29 @@
     - headers
     - lbmethod_bytraffic
     - rewrite
+  notify: restart apache
+
 
 - name: copy ports.conf
   copy:
     src: ../files/ports.conf
     dest: /etc/apache2/ports.conf
   become: true
+  notify: restart apache
 
 - name: copy 000-default.conf
   copy:
     src: ../files/000-default.conf
     dest: /etc/apache2/sites-available/000-default.conf
   become: true
+  notify: restart apache
 
 
-- name: restart apache
-  service:
-      name: apache2
-      state: restarted
-  become: true
+
+# - name: restart apache
+#   service:
+#       name: apache2
+#       state: restarted
+#   become: true
 
 
