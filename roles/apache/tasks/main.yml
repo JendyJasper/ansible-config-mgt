@@ -13,7 +13,7 @@
   become: true
   loop:
     - apache2
-    - libxml2-dev
+    - libxml2
   notify: restart apache
 
 
