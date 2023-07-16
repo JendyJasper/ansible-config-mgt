@@ -1,6 +1,6 @@
 ---
 - name: stop nginx
-  import_tasks: ../handlers/main.yml
+  import_handlers: ../handlers/main.yml
   service:
     name: nginx
     state: stopped
