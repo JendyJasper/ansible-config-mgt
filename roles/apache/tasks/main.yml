@@ -44,6 +44,3 @@
     dest: /etc/apache2/sites-available/000-default.conf
   become: true
   notify: restart apache
-
-
-- import_tasks: ../handlers/main.yml
