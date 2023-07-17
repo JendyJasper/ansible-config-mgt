@@ -21,10 +21,10 @@
     - libxml2
   notify: restart apache
 
-
-- name: Print full message
+- name: print output
   debug:
-    msg: "{{ apache2_enabled }}"
+    msg: 
+      var: result
 
 - name: enable apache2 modules
   when: item not in apache2_enabled_modules
