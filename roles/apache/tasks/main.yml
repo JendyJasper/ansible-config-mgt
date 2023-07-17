@@ -31,6 +31,8 @@
   - lbmethod_bytraffic
   - rewrite
   register: res
+
+- name: print again
   debug:
     msg: 
       var: "{{ res }}"
