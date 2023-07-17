@@ -41,12 +41,12 @@
   command: a2dismod {{ item }} 
   become: true
   loop:
+    - proxy_balancer
     - proxy
     - proxy_http
     - headers
     - lbmethod_bytraffic
     - rewrite
-    - proxy_balancer
   notify: restart apache
 
 
