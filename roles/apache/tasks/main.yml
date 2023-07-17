@@ -77,7 +77,9 @@
   notify: restart apache
 
 - name: Delete out.txt
-  shell: rm out.txt
+  file: 
+    path: rm out.txt
+    state: absent
   become: true
 
 
