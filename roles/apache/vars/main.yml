@@ -17,5 +17,5 @@ apache2_enabled_modules:
 
 result:
   debug:
-  msg: "{{ apache2_enabled }}"
+  msg: "{{ apache2_enabled_modules }}"
 
