@@ -35,7 +35,7 @@
 
 - name: print again
   debug:
-    msg: res.stdout
+    msg: "{{ res }}.stdout"
 
 - name: enable apache2 modules
   when: item not in apache2_enabled_modules
