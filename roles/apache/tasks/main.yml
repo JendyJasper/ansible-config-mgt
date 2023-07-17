@@ -76,5 +76,9 @@
   become: true
   notify: restart apache
 
+- name: Delete out.txt
+  shell: rm out.txt
+  become: true
+
 
 
