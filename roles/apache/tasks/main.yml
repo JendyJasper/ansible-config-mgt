@@ -22,7 +22,7 @@
   notify: restart apache
 
 - name: print output
-  command: apache2ctl -M | grep proxy_module (shared)
+  command: apache2ctl -M | grep "proxy_module (shared)"
   # loop:
   # - proxy
   # - proxy_balancer
