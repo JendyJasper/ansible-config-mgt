@@ -22,9 +22,18 @@
   notify: restart apache
 
 - name: print output
+  command: apache2ctl -M | grep {{ item }}_module
+  loop:
+  - proxy
+  - proxy_balancer
+  - proxy_http
+  - headers
+  - lbmethod_bytraffic
+  - rewrite
+  register: res
   debug:
     msg: 
-      var: "{{ apache2_enabled_modules }}"
+      var: "{{ res }}"
 
 - name: enable apache2 modules
   when: item not in apache2_enabled_modules
