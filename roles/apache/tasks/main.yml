@@ -30,6 +30,7 @@
   - headers
   - lbmethod_bytraffic
   - rewrite
+  become: true
   register: res
 
 - name: print again
