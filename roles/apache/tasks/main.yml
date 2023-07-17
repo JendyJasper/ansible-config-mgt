@@ -34,10 +34,7 @@
   register: res
 
 - name: print again
-  debug: msg="{{ res }}"
-  loop: "{{ lookup('dict', res) }}"
-  when: res.stdout in item.key"
-
+- debug: "msg={{ res.results | map(attribute='stdout') | join('\n') }}"
 
 - name: enable apache2 modules
   when: item not in apache2_enabled_modules
