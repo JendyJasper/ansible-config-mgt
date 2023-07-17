@@ -31,7 +31,7 @@
   - lbmethod_bytraffic
   - rewrite
   become: true
-  register: not res is none
+  # register: res
 
 - name: print again
   debug: "msg={{ res.results | map(attribute='stdout') | join('\\n') }}"
