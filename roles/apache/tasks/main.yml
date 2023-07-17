@@ -22,14 +22,14 @@
   notify: restart apache
 
 - name: print output
-  command: apache2ctl -M | grep {{ item }}_module (shared)
-  loop:
-  - proxy
-  - proxy_balancer
-  - proxy_http
-  - headers
-  - lbmethod_bytraffic
-  - rewrite
+  command: apache2ctl -M | grep proxy_module (shared)
+  # loop:
+  # - proxy
+  # - proxy_balancer
+  # - proxy_http
+  # - headers
+  # - lbmethod_bytraffic
+  # - rewrite
   become: true
   register: res
 
