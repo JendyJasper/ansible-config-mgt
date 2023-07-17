@@ -3,8 +3,8 @@
 
 
 
-apache2_enabled_modules: 
-  command: apache2ctl -M | grep {{ item }}_module
+get_data:
+  shell: apache2ctl -M | grep ""{{ item }}"_module (shared)"
   loop:
   - proxy
   - proxy_balancer
@@ -12,5 +12,5 @@ apache2_enabled_modules:
   - headers
   - lbmethod_bytraffic
   - rewrite
-
-
+  become: true
+  register: res
