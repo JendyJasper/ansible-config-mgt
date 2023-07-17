@@ -34,11 +34,11 @@
   register: res
 
 - name: Sort file and delete duplicates
-  shell: sort -u out.txt > out.txt
+  shell: sort -u out.txt > out2.txt
   register: res_s
 
 - name: Print out the data in out.txt and register the result
-  shell: cat out.txt 
+  shell: cat out2.txt 
   register: res_d
 
 # - name: print again
