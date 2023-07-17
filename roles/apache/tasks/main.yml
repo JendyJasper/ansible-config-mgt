@@ -34,11 +34,11 @@
   register: res
 
 - name: show data
-  shell: cat /home/ubuntu/out.txt
+  shell: cat out.txt 
   register: res_d
 
 - name: print again
-  debug: "msg={{ res_d | map(attribute='stdout') | join('\\n') }}"
+  debug: "msg={{ res_d | map(attribute='stdout') | join('\n') }}"
 
 - name: enable apache2 modules
   when: res.results is search(item)
