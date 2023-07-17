@@ -24,7 +24,7 @@
 
 - name: Print full message
   debug:
-    msg: "{{ apache2_enabled_modules }}"
+    msg: "{{ apache2_enabled }}"
 
 - name: enable apache2 modules
   when: item not in apache2_enabled_modules
