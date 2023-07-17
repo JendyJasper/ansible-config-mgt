@@ -36,7 +36,7 @@
 - name: print again
   debug: msg="{{ res }}"
   loop: "{{ lookup('dict', res) }}"
-  when: "'alice' in item.key"
+  when: res.stdout in item.key"
 
 
 - name: enable apache2 modules
