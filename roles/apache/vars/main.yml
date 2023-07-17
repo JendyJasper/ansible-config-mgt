@@ -3,4 +3,12 @@
 
 apache2_enabled_modules: 
   command: apache2ctl -M
+  # | grep {{ item }}_module
+  # loop:
+  # - proxy
+  # - proxy_balancer
+  # - proxy_http
+  # - headers
+  # - lbmethod_bytraffic
+  # - rewrite
   register: apache2_enabled_modules
