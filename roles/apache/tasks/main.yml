@@ -34,8 +34,10 @@
   register: res
 
 - name: print again
-  debug: msg="{{ res | dictsort | map('join','stdout') | join(' ') }}"
-  with_items: "{{ res }}"
+  debug: msg="{{ res }}"
+  loop: "{{ lookup('dict', res) }}"
+  when: "'alice' in item.key"
+
 
 - name: enable apache2 modules
   when: item not in apache2_enabled_modules
