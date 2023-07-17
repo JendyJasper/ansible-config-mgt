@@ -1,2 +1,5 @@
 ---
 # vars file for apache
+
+apache2_enabled_modules: 
+  command: apache2ctl -M

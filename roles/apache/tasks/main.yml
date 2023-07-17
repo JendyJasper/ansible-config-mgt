@@ -24,8 +24,7 @@
 - name: enable apache2 modules
   command: a2enmod {{ item }} 
   become: true
-  when:
-    item in apache2ctl -M
+  when: item in apache2_enabled_modules
   loop:
     - proxy
     - proxy_balancer
