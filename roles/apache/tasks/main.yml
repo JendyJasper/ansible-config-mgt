@@ -78,7 +78,7 @@
 
 - name: Delete out.txt
   file: 
-    path: rm out.txt
+    path: /home/ubuntu/out.txt
     state: absent
   become: true
 
