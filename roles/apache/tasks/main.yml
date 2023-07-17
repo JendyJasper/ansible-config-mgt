@@ -22,7 +22,7 @@
   notify: restart apache
 
 - name: get_data
-  shell: apache2ctl -M | grep ""{{ item }}"_module (shared)" | cat >> out.txt | more out.txt
+  shell: apache2ctl -M | grep ""{{ item }}"_module (shared)" | cat >> out.txt
   loop:
   - proxy
   - proxy_balancer
