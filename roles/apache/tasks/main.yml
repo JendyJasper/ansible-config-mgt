@@ -42,7 +42,7 @@
   register: res_m
 
 - name: Print out the data in out.txt and register the result
-  shell: cat out2.txt 
+  shell: cat out.txt 
   register: res_d
 
 # - name: print again
