@@ -2,7 +2,7 @@
 # vars file for apache
 
 apache2_enabled_modules: 
-  command: apache2ctl -M | grep "{{ item }}_module (shared)"
+  command: apache2ctl -M | grep {{ item }}_module
   loop:
   - proxy
   - proxy_balancer
