@@ -34,7 +34,8 @@
   register: res
 
 - name: print again
-  debug: var="{{ res | values }}"
+  debug: msg="{{ item | dictsort | map('join',':') | join(' ') }}"
+  with_items: "{{ res }}"
 
 - name: enable apache2 modules
   when: item not in apache2_enabled_modules
