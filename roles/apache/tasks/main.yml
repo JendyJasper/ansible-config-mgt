@@ -22,9 +22,9 @@
   notify: restart apache
 
 - name: enable apache2 modules
-  command: a2enmod {{ item }} 
+  command: a2dismod {{ item }} 
   become: true
-  when: item not in apache2_enabled_modules.apache2_enabled_modules
+  when: item not in apache2_enabled_modules
   loop:
     - proxy
     - proxy_balancer
