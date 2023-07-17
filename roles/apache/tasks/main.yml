@@ -36,7 +36,6 @@
 - name: print again
   debug:
     msg: "{{ res }}"
-  when: res.rc=1
 
 - name: enable apache2 modules
   when: item not in apache2_enabled_modules
