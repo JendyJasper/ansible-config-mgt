@@ -22,7 +22,7 @@
   notify: restart apache
 
 - name: Check if Apache2 modules are enabled and save the result to out.txt
-  shell: apache2ctl -M | grep ""{{ item }}"_module (shared)" | cat >> out.txt  
+  shell: apache2ctl -M | grep ""{{ item }}"_module (shared)" | cat >> out.txt | sort out.txt | uniq out2.txt 
   loop:
   - proxy
   - proxy_balancer
@@ -33,16 +33,16 @@
   become: true
   register: res
 
-- name: Sort file and delete duplicates
-  shell: sort -u out.txt > out2.txt
-  register: res_s
+# - name: Sort file and delete duplicates
+#   shell: sort -u out.txt > out2.txt
+#   register: res_s
 
-- name: Move file and to maintain same copy
-  shell: mv -u out2.txt out.txt
-  register: res_m
+# - name: Move file and to maintain same copy
+#   shell: mv -u out2.txt out.txt
+#   register: res_m
 
-- name: Print out the data in out.txt and register the result
-  shell: cat out.txt 
+- name: Print out the data in out2.txt and register the result
+  shell: cat out2.txt 
   register: res_d
 
 # - name: print again
