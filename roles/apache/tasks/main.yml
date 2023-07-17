@@ -30,7 +30,8 @@
   - headers
   - lbmethod_bytraffic
   - rewrite
-  path: /home/ubuntu/out.txt
+  file: 
+    path: /home/ubuntu/out.txt
   become: true
   when: item.path | length > 0
   register: res
