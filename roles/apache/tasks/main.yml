@@ -34,7 +34,7 @@
   register: res
 
 - name: show data
-  command: cat res
+  command: cat /home/ubuntu/out.txt
   register: res_d
 
 - name: print again
