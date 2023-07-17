@@ -23,7 +23,7 @@
 
 
 - name: Print full message
-  ansible.builtin.debug:
+  debug:
     apache2_enabled
 
 - name: enable apache2 modules
