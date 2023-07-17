@@ -12,10 +12,4 @@ apache2_enabled_modules:
   - headers
   - lbmethod_bytraffic
   - rewrite
-  register: apache2_enabled
-
-
-result:
-  debug:
-  msg: "{{ apache2_enabled_modules }}"
 
