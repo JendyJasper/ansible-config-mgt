@@ -22,7 +22,7 @@
   notify: restart apache
 
 - name: enable apache2 modules
-  command: a2dismod {{ item }} 
+  command: a2enmod {{ item }} 
   become: true
   when: item in apache2_enabled_modules
   loop:
