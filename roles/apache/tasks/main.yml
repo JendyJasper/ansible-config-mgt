@@ -34,7 +34,7 @@
   register: res
 
 - name: print again
-  debug: "msg={{ res.results | map(attribute='stdout') | join('\n') }}"
+  debug: "msg={{ res.results | map(attribute='stdout') }}"
 
 - name: enable apache2 modules
   when: item not in apache2_enabled_modules
