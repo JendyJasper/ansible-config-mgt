@@ -3,3 +3,4 @@
 
 apache2_enabled_modules: 
   command: apache2ctl -M
+  register: apache2_enabled_modules
