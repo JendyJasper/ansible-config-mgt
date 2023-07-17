@@ -22,7 +22,7 @@
   notify: restart apache
 
 - name: Check if Apache2 modules exist and save the result to out.txt
-  shell: apache2ctl -M | grep ""{{ item }}"_module (shared)" | cat >> out.txt | cat out.txt
+  shell: apache2ctl -M | grep ""{{ item }}"_module (shared)" | cat >> out.txt
   loop:
   - proxy
   - proxy_balancer
@@ -33,11 +33,11 @@
   become: true
   register: res
 
-- name: Print out the data in out.txt and resave it to outer.txt and register the result
-  shell: cat out.txt > outer.txt
+- name: Print out the data in out.txt and register the result
+  shell: cat out.txt 
   register: res_d
 
-# - name: print console stdout one per line 
+# - name: print again
 #   debug: "msg={{ res_d | map(attribute='stdout') | join('\n') }}"
 
 - name: enable apache2 modules
