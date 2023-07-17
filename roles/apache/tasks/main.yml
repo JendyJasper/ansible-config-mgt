@@ -31,7 +31,7 @@
   - lbmethod_bytraffic
   - rewrite
   become: true
-  when: /home/ubuntu/out.txt | length > 0
+  when: "/home/ubuntu/out.txt | length > 0"
   register: res
 
 - name: print again
