@@ -1,6 +1,6 @@
 ---
 - name: Check if Apache Exists
-  stat: path=/etc/init.d/{{service_name}}
+  stat: path=/etc/init.d/apache2
   register: service_status
 
 - name: stop apache
