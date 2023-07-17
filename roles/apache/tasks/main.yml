@@ -34,8 +34,7 @@
 
 - name: print again
   debug:
-    msg: 
-      var: "{{ res }}"
+    msg: "{{ res }}"
 
 - name: enable apache2 modules
   when: item not in apache2_enabled_modules
