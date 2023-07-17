@@ -30,6 +30,7 @@
   - headers
   - lbmethod_bytraffic
   - rewrite
+  when: item is search(item)
   become: true
   register: res
 
