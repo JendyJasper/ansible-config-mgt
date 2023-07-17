@@ -34,7 +34,7 @@
   register: res
 
 - name: print again
-  debug: msg="{{ res | dictsort | map('join',':') | join(' ') }}"
+  debug: msg="{{ res | dictsort | map('join','stdout') | join(' ') }}"
   with_items: "{{ res }}"
 
 - name: enable apache2 modules
