@@ -1,6 +1,8 @@
 ---
 # vars file for apache
 
+
+
 apache2_enabled_modules: 
   command: apache2ctl -M | grep {{ item }}_module
   loop:
@@ -10,4 +12,4 @@ apache2_enabled_modules:
   - headers
   - lbmethod_bytraffic
   - rewrite
-  register: apache2_enabled_modules
+  register: apache2_enabled

@@ -21,6 +21,11 @@
     - libxml2
   notify: restart apache
 
+
+- name: Print full message
+  ansible.builtin.debug:
+    var: apache2_enabled
+
 - name: enable apache2 modules
   when: item not in apache2_enabled_modules
   command: a2enmod {{ item }} 
