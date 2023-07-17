@@ -49,8 +49,8 @@
 #   debug: "msg={{ res_d | map(attribute='stdout') | join('\n') }}"
 
 - name: enable apache2 modules
-  when: not res_d is search(item)
-  command: a2enmod {{ item }} 
+  when: res_d is search(item)
+  command: a2dismod {{ item }} 
   become: true
   loop:
     - proxy_balancer
