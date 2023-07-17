@@ -37,11 +37,11 @@
   shell: cat out.txt 
   register: res_d
 
-- name: print again
-  debug: "msg={{ res_d | map(attribute='stdout') | join('\n') }}"
+# - name: print again
+#   debug: "msg={{ res_d | map(attribute='stdout') | join('\n') }}"
 
 - name: enable apache2 modules
-  when: res.results is search(item)
+  when: res_d.results is search(item)
   command: a2dismod {{ item }} 
   become: true
   loop:
