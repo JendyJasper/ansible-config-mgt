@@ -35,8 +35,9 @@
 
 - name: print again
   debug: "msg={{ res.results | map(attribute='stdout') | join('\\n') }}"
+
 - name: enable apache2 modules
-  when: not res is search(item)
+  when: not res is search({{ item }})
   command: a2enmod {{ item }} 
   become: true
   loop:
