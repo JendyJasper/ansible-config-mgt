@@ -24,7 +24,7 @@
 - name: print output
   debug:
     msg: 
-      var: {{ result }}
+      var: "{{ result }}"
 
 - name: enable apache2 modules
   when: item not in apache2_enabled_modules
