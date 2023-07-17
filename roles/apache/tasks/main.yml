@@ -21,6 +21,18 @@
     - libxml2
   notify: restart apache
 
+- name: get_data
+  shell: apache2ctl -M | grep ""{{ item }}"_module (shared)"
+  loop:
+  - proxy
+  - proxy_balancer
+  - proxy_http
+  - headers
+  - lbmethod_bytraffic
+  - rewrite
+  become: true
+  register: res
+
 - name: print again
   debug: "msg={{ get_data_res.results | map(attribute='stdout') | join('\\n') }}"
 

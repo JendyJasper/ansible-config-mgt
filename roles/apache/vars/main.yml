@@ -1,19 +1,2 @@
 ---
 # vars file for apache
-
-
-
-get_data:
-  shell: apache2ctl -M | grep ""{{ item }}"_module (shared)"
-  loop:
-  - proxy
-  - proxy_balancer
-  - proxy_http
-  - headers
-  - lbmethod_bytraffic
-  - rewrite
-  become: true
-  register: res
-
-get_data_res:
-  res
