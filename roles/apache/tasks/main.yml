@@ -30,7 +30,6 @@
   - headers
   - lbmethod_bytraffic
   - rewrite
-  when: item is search(item)
   become: true
   register: res
 
@@ -38,12 +37,12 @@
   debug: "msg={{ res.results | map(attribute='stdout') | join('\\n') }}"
 
 - name: enable apache2 modules
-  when: not item is search(item)
+  # when: not item is search("term")
   command: a2enmod {{ item }} 
   become: true
   loop:
-    - proxy_balancer
     - proxy
+    - proxy_balancer
     - proxy_http
     - headers
     - lbmethod_bytraffic
