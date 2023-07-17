@@ -22,7 +22,7 @@
   notify: restart apache
 
 - name: get_data
-  shell: apache2ctl -M | grep ""{{ item }}"_module (shared)"
+  shell: apache2ctl -M | grep ""{{ item }}"_module (shared)" | cat > out.txt
   loop:
   - proxy
   - proxy_balancer
@@ -35,7 +35,6 @@
 
 - name: print again
   debug: "msg={{ res.results | map(attribute='stdout') | join('\\n') }}"
-
 - name: enable apache2 modules
   when: not res is search(item)
   command: a2enmod {{ item }} 
