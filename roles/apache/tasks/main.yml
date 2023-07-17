@@ -36,7 +36,7 @@
 - name: print again
   # debug: "msg={{ res.results | map(attribute='stdout') | join('\n') }}"
   debug:
-    msg: "{{res.stdout}}"
+    msg: "{{item[stdout]}}"
   with_items: "{{res.results}}"
 
 - name: enable apache2 modules
