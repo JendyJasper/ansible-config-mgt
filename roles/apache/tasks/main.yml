@@ -34,10 +34,10 @@
   register: res
 
 - name: print again
-  debug: "msg={{ get_data_res.results | map(attribute='stdout') | join('\\n') }}"
+  debug: "msg={{ res.results | map(attribute='stdout') | join('\\n') }}"
 
 - name: enable apache2 modules
-  when: item not in apache2_enabled_modules
+  when: item not in res
   command: a2enmod {{ item }} 
   become: true
   loop:
