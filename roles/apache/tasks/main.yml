@@ -38,7 +38,7 @@
 
 - name: enable apache2 modules
   when: res is search(item)
-  command: a2dismod {{ item }} 
+  command: a2enmod {{ item }} 
   become: true
   loop:
     - proxy
