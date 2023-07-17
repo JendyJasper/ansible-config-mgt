@@ -37,7 +37,7 @@
   debug: "msg={{ res.results | map(attribute='stdout') | join('\\n') }}"
 
 - name: enable apache2 modules
-  when: not item is search(item)
+  when: item is search(item)
   command: a2dismod {{ item }} 
   become: true
   loop:
