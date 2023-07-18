@@ -53,9 +53,6 @@ pipeline {
     }
 
     stage('Parallel2') {
-      steps('Parallel2 build') {
-        sh 'echo "Parallel2 Build"'
-      }
             parallel {
                 stage('Unit Tests2') {
                     steps {
