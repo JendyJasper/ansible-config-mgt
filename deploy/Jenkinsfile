@@ -18,17 +18,6 @@ pipeline {
       }
     }
 
-    stage ('Test Nested Stages') {
-      stages{
-        stage('Nested') {
-          steps{
-            sh 'echo "Nested Stage"'
-          }
-        }
-      }
-
-    }
-
     stage('Package') {
       steps{
         script {
