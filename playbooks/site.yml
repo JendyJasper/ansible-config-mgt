@@ -1,17 +1,11 @@
 # ---
-# - hosts: all
-# - import_playbook: ../static-assignments/common.yml
-
-# - hosts: all
-# - import_playbook: ../static-assignments/common-del.yml
-
 # - hosts: uat-webservers
 # - import_playbook: ../static-assignments/uat-webservers.yml
 
 ---
 
 # , uat-webservers, uat-database
-- hosts: lb
+- hosts: nginx, tooling
 - name: Include dynamic variables 
   # tasks:
   #import_playbook: ../static-assignments/common.yml 
@@ -19,15 +13,13 @@
   tags:
     - always
 
-# - hosts: uat-webservers
-# - name: uat-webservers assignment
-#   import_playbook: ../static-assignments/uat-webservers.yml
+- hosts: nginx, tooling
+- name: Configure Nginx 
+  import_playbook: ../static-assignments/dev.yml 
 
-# - hosts: uat-database
-# - name: uat-database configuration
-#   import_playbook: ../static-assignments/uat-database.yml
+- hosts: tooling
+- name: Configure Nginx 
+  import_playbook: ../static-assignments/dev.yml 
+  tags:
+    - tooling-html
 
-- hosts: lb
-- name: Loadbalancers assignment
-  import_playbook: ../static-assignments/uat-lb.yml
-  when: load_balancer_is_required 

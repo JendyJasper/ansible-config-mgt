@@ -1,0 +1,5 @@
+---
+- hosts: nginx, tooling
+  roles:
+    - role: nginx
+      become: yes

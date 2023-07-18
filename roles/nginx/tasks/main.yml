@@ -18,12 +18,13 @@
   become: true
   notify: start nginx
 
-- name: copy nginx.conf
-  copy:
-    src: ../files/nginx.conf
-    dest: /etc/nginx/nginx.conf
-  become: true
-  notify: reload nginx
+#update .conf file
+# - name: copy nginx.conf
+#   copy:
+#     src: ../files/nginx.conf
+#     dest: /etc/nginx/nginx.conf
+#   become: true
+#   notify: reload nginx
 
 - name: remove nginx default welcome page
   file:  
@@ -31,6 +32,15 @@
     state: absent
   become: true  
   notify: reload nginx
+
+- name: copy html content to one level up
+  copy:
+    src: /var/www/html/html
+    dest: /var/www/html
+  become: true
+  tag:
+    - tooling-html
+  # command: cp -r /var/www/html/html/ /var/www/
 
 
 

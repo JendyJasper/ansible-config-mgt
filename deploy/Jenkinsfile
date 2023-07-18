@@ -1,91 +1,28 @@
 pipeline {
-    agent any
-
+  agent any
+  
   stages {
-    stage('Build') {
+
+    stage('SCM Checkout'){
       steps {
-        script {
-          sh 'echo "Building Stage"'
-        }
+              git branch: 'main', url: 'https://github.com/JendyJasper/tooling.git'
       }
     }
 
-    stage('Test') {
+    stage('Install Nginx'){
       steps {
-        script {
-          sh 'echo "Testing Stage"'
-        }
+        ansiblePlaybook credentialsId: 'be7c03d3-2a77-4e2e-a4f7-4fae59b354d5', 
+        disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory/dev.yml', 
+        playbook: 'playbooks/site.yml', skippedTags: 'tooling-html'
       }
     }
 
-    stage('Parallel') {
-            parallel {
-                stage('Unit Tests') {
-                    steps {
-                        sh 'sleep 5s'
-                        sh 'echo "Running unit tests"'
-                        // Add commands to run unit tests
-                    }
-                }
-
-                stage('Integration Tests') {
-                    steps {
-                        sh 'echo "Running integration tests"'
-                        // Add commands to run integration tests
-                    }
-                }
-                
-                stage('Echo Tests') {
-                    steps {
-                        sh 'echo "Tests"'
-                        // Add commands to run integration tests
-                    }
-                }
-            }
-        }
-
-    stage('Package') {
-      steps{
-        script {
-          sh 'echo "Testing Package"'
-        }
-      }
-    }
-
-    stage('Parallel2') {
-            parallel {
-                stage('Unit Tests2') {
-                    steps {
-                        sh 'sleep 5s'
-                        sh 'echo "Running unit tests"'
-                        // Add commands to run unit tests
-                    }
-                }
-
-                stage('Integration Tests2') {
-                    steps {
-                        sh 'echo "Running integration tests"'
-                        // Add commands to run integration tests
-                    }
-                }
-            }
-          }
-
-    stage('Deploy') {
+    stage("Copy html") {
       steps {
-        script {
-          sh 'echo "Testing Deploy"'
-        }
-      }
-
-    }
-
-    stage('Clean Up') {
-      steps {
-        script {
-          sh 'echo "Testing Clean Up"'
-        }
+        ansiblePlaybook credentialsId: 'be7c03d3-2a77-4e2e-a4f7-4fae59b354d5', 
+        disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory/dev.yml', 
+        playbook: 'playbooks/site.yml', tags: 'tooling-html'
       }
     }
-    }
+  }
 }
