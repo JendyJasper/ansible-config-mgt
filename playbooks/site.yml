@@ -4,14 +4,14 @@
 
 ---
 
-# , uat-webservers, uat-database
-- hosts: nginx, tooling
-- name: Include dynamic variables 
-  # tasks:
-  #import_playbook: ../static-assignments/common.yml 
-  include: ../dynamic-assignments/env-vars.yml
-  tags:
-    - always
+# # , uat-webservers, uat-database
+# - hosts: nginx, tooling
+# - name: Include dynamic variables 
+#   # tasks:
+#   #import_playbook: ../static-assignments/common.yml 
+#   include: ../dynamic-assignments/env-vars.yml
+#   tags:
+#     - always
 
 - hosts: nginx, tooling
 - name: Configure Nginx 
