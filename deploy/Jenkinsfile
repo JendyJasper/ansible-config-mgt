@@ -27,9 +27,17 @@ pipeline {
                         // Add commands to run unit tests
                     }
                 }
+
                 stage('Integration Tests') {
                     steps {
                         sh 'echo "Running integration tests"'
+                        // Add commands to run integration tests
+                    }
+                }
+                
+                stage('Echo Tests') {
+                    steps {
+                        sh 'echo "Tests"'
                         // Add commands to run integration tests
                     }
                 }
