@@ -12,16 +12,18 @@ pipeline {
     stage('Install Nginx'){
       steps {
         ansiblePlaybook credentialsId: 'be7c03d3-2a77-4e2e-a4f7-4fae59b354d5', 
-        disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory/dev.yml', 
-        playbook: 'playbooks/site.yml', skippedTags: 'tooling-html'
+        disableHostKeyChecking: true, installation: 'ansible', 
+        inventory: '${WORKSPACE}/inventory/dev.yml', playbook: '${WORKSPACE}/playbooks/site.yml', 
+        skippedTags: 'tooling-html'
       }
     }
 
     stage("Copy html") {
       steps {
         ansiblePlaybook credentialsId: 'be7c03d3-2a77-4e2e-a4f7-4fae59b354d5', 
-        disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory/dev.yml', 
-        playbook: 'playbooks/site.yml', tags: 'tooling-html'
+        disableHostKeyChecking: true, installation: 'ansible', inventory: '
+        ${WORKSPACE}/inventory/dev.yml', playbook: '${WORKSPACE}/playbooks/site.yml', 
+        tags: 'tooling-html'
       }
     }
   }
