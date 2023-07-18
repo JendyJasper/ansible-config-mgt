@@ -11,7 +11,7 @@ pipeline {
 
     stage('Install Nginx'){
       steps {
-        ansiblePlaybook credentialsId: 'be7c03d3-2a77-4e2e-a4f7-4fae59b354d5', 
+        ansiblePlaybook credentialsId: 'ansible-jenkins-ssh', 
         disableHostKeyChecking: true, installation: 'ansible', 
         inventory: '${WORKSPACE}/inventory/dev.yml', playbook: '${WORKSPACE}/playbooks/site.yml', 
         skippedTags: 'tooling-html'
@@ -20,7 +20,7 @@ pipeline {
 
     stage("Copy html") {
       steps {
-        ansiblePlaybook credentialsId: 'be7c03d3-2a77-4e2e-a4f7-4fae59b354d5', 
+        ansiblePlaybook credentialsId: 'ansible-jenkins-ssh', 
         disableHostKeyChecking: true, installation: 'ansible', 
         inventory: '${WORKSPACE}/inventory/dev.yml', playbook: '${WORKSPACE}/playbooks/site.yml', 
         tags: 'tooling-html'
