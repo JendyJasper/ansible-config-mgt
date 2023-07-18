@@ -75,6 +75,7 @@ pipeline {
                         // Add commands to run integration tests
                     }
                 }
+            }
     }
 
     stage('Clean Up') {
