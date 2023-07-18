@@ -52,14 +52,10 @@ pipeline {
       }
     }
 
-    stage('Deploy') {
-      steps {
-        script {
-          sh 'echo "Testing Deploy"'
-        }
+    stage('Parallel2') {
+      steps('Parallel2 build') {
+        sh 'echo "Parallel2 Build"'
       }
-
-          stage('Parallel2') {
             parallel {
                 stage('Unit Tests2') {
                     steps {
@@ -77,6 +73,14 @@ pipeline {
                 }
             }
           }
+
+    stage('Deploy') {
+      steps {
+        script {
+          sh 'echo "Testing Deploy"'
+        }
+      }
+
     }
 
     stage('Clean Up') {
