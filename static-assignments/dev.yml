@@ -3,3 +3,4 @@
   roles:
     - role: nginx
       become: yes
+  gather_facts: False 
