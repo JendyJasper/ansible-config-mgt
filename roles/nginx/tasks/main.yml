@@ -38,7 +38,7 @@
     src: /var/www/html/html
     dest: /var/www/html
   become: true
-  tag:
+  tags:
     - tooling-html
   # command: cp -r /var/www/html/html/ /var/www/
 
