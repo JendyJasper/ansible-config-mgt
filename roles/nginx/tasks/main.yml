@@ -12,7 +12,7 @@
   notify: start nginx
 
 - name: install nginx
-  apt: 
+  yum: 
     name: nginx 
     state: latest
   become: true
