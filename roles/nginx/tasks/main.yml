@@ -34,7 +34,6 @@
   notify: reload nginx
 
 - name: copy html content to one level up
-  ansible.builtin.include: ../dynamic-assignments/env-vars.yml
   copy:
     #src: /var/www/html/html
     src: "{{ WORKSPACE }}/html/"
