@@ -4,5 +4,3 @@
     - role: nginx
       become: yes
   gather_facts: False 
-  tags:
-    - tooling-html
