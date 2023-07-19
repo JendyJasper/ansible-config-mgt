@@ -1,10 +1,10 @@
 ---
 
-- name: Include dynamic variables 
-  hosts: tooling
+- hosts: tooling
+  name: Include dynamic variables 
   tasks:
   # import_playbook: ../static-assignments/common.yml 
-    include: ../dynamic-assignments/env-vars.yml
+    - include: ../dynamic-assignments/env-vars.yml
   # tags:
   #   - always
 
