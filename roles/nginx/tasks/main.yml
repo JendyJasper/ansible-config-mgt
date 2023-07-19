@@ -36,7 +36,7 @@
 - name: copy html content to one level up
   copy:
     #src: /var/www/html/html
-    src: WORKSPACE/html/
+    src: "{{ WORKSPACE }}/html/"
     dest: /var/www/html
   become: true
   tags:
