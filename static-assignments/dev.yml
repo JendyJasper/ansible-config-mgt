@@ -4,3 +4,11 @@
     - role: nginx
       become: yes
   gather_facts: False 
+
+- hosts: tooling
+  roles:
+    - role: nginx
+      become: yes
+  gather_facts: False 
+  tags:
+    - tooling-html
