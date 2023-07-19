@@ -3,4 +3,3 @@
 
 enable_nginx_lb: false
 load_balancer_is_required: false
-WORKSPACE: /var/lib/jenkins/workspace/ansible-config-mgt_main
