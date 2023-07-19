@@ -38,6 +38,7 @@
     path: /usr/share/nginx/html
     state: absent
   become: true  
+  notify: reload nginx
 
 - name: copy html content to one level up
   copy:
