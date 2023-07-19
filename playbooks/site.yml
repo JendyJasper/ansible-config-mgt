@@ -13,10 +13,8 @@
 #   tags:
 #     - always
 
-# - hosts: nginx, tooling
 - name: Configure Nginx 
   import_playbook: ../static-assignments/dev.yml
 
-# - hosts: tooling
-- name: Configure Nginx 
+- name: Copy file 
   import_playbook: ../static-assignments/dev-file-copy.yml 
