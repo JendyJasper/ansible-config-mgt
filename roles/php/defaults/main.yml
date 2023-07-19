@@ -4,7 +4,7 @@
 php_enablerepo: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm, https://rpms.remirepo.net/enterprise/remi-release-9.rpm"
 
 # Extra packages to install (in addition to distro-specific default lists).
-php_packages_extra:
+php_packages_extra: []
   # - libapache2-mod-php
   # - php-cgi
   # - php-common 
