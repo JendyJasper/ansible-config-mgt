@@ -1,6 +1,15 @@
 ---
 - hosts: tooling
+  name: Include dynamic variables 
+  tasks:
+  #import_playbook: ../static-assignments/common.yml 
+    - include_tasks: ../dynamic-assignments/env-vars.yml
+  tags:
+    - always
+
+- hosts: tooling
   roles:
     - role: nginx
       become: yes
   gather_facts: False
+
