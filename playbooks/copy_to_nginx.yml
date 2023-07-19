@@ -1,4 +1,4 @@
 ---
 - name: Copy file 
   import_playbook: ../static-assignments/dev-file-copy.yml 
-  include: ../dynamic-assignments/env-vars.yml
+  ansible.builtin.include: ../dynamic-assignments/env-vars.yml
