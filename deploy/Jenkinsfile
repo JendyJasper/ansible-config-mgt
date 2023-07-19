@@ -6,7 +6,7 @@ pipeline {
     stage('SCM Checkout'){
       steps {
           git credentialsId: 'be7c03d3-2a77-4e2e-a4f7-4fae59b354d5', 
-          url: 'https://github.com/PuneethReddyHC/online-shopping-system.git'
+          url: 'https://github.com/Mushf1qur/EverydayNews.git'
       }
     }
 
