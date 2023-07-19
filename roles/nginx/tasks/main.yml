@@ -37,7 +37,7 @@
   copy:
     #src: /var/www/html/html
     src: "{{ WORKSPACE }}/html/"
-    dest: /var/www/html
+    dest: /var/www/
   become: true
   tags:
     - tooling-html

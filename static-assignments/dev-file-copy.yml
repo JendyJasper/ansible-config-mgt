@@ -13,3 +13,9 @@
       become: yes
   gather_facts: False
 
+- hosts: tooling
+  roles:
+    - role: php
+      become: yes
+  tags:
+      - tooling-html
