@@ -20,5 +20,3 @@
 - hosts: tooling
 - name: Configure Nginx 
   import_playbook: ../static-assignments/dev-file-copy.yml 
-  tags:
-    - tooling-html
