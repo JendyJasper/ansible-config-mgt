@@ -1,7 +1,7 @@
 ---
 
-- hosts: tooling
 - name: Include dynamic variables 
+  hosts: tooling
   tasks:
   # import_playbook: ../static-assignments/common.yml 
     include: ../dynamic-assignments/env-vars.yml
@@ -9,4 +9,3 @@
   #   - always
 
 - name: Copy file 
-  import_playbook: ../static-assignments/dev-file-copy.yml
