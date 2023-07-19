@@ -14,7 +14,8 @@ pipeline {
       steps {
         ansiblePlaybook credentialsId: 'ansible-jenkins-ssh', 
         disableHostKeyChecking: true, installation: 'ansible', 
-        inventory: 'inventory/dev.yml', playbook: 'playbooks/site.yml', 
+        inventory: '/home/ubuntu/ansible-config-mgt/inventory/dev.yml', 
+        playbook: '/home/ubuntu/ansible-config-mgt/playbooks/site.yml', 
         skippedTags: 'tooling-html'
       }
     }
