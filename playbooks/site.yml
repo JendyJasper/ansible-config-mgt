@@ -16,5 +16,3 @@
 - name: Configure Nginx 
   import_playbook: ../static-assignments/dev.yml
 
-- name: Copy file 
-  import_playbook: ../static-assignments/dev-file-copy.yml 
