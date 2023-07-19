@@ -6,14 +6,13 @@ php_enablerepo: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noa
 # Extra packages to install (in addition to distro-specific default lists).
 php_packages_extra:
   # - libapache2-mod-php
-  - php-cgi
-  - php-common 
-  - php-opcache 
-  - php-mcrypt 
-  - php-cli 
-  - php-gd 
-  - php-curl 
-  - php-mysqlnd
+  # - php-cgi
+  # - php-common 
+  # - php-opcache 
+  # - php-cli 
+  # - php-gd 
+  # - php-curl 
+  # - php-mysqlnd
 # Default PHP version to install on Debian-based OSes (OS-specific).
 # php_default_version_debian: ""
 
