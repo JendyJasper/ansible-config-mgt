@@ -2,9 +2,9 @@
 
 - hosts: tooling
 - name: Include dynamic variables 
-  # tasks:
-  #import_playbook: ../static-assignments/common.yml 
-  ansible.builtin.include_tasks: ../dynamic-assignments/env-vars.yml
+  tasks:
+  # import_playbook: ../static-assignments/common.yml 
+    ansible.builtin.include_tasks: ../dynamic-assignments/env-vars.yml
   tags:
     - always
 
