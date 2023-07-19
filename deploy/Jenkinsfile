@@ -14,8 +14,8 @@ pipeline {
       steps {
         ansiblePlaybook credentialsId: 'ansible-jenkins-ssh', 
         disableHostKeyChecking: true, installation: 'ansible', 
-        inventory: '/home/ubuntu/ansible-config-artifact/roles/inventory/dev.yml', 
-        playbook: '/home/ubuntu/ansible-config-artifact/roles/playbooks/site.yml', 
+        inventory: '/home/ubuntu/ansible-config-artifact/inventory/dev.yml', 
+        playbook: '/home/ubuntu/ansible-config-artifact/playbooks/site.yml', 
         skippedTags: 'tooling-html'
       }
     }
@@ -24,8 +24,8 @@ pipeline {
       steps {
         ansiblePlaybook credentialsId: 'ansible-jenkins-ssh', 
         disableHostKeyChecking: true, installation: 'ansible', 
-        inventory: '/home/ubuntu/ansible-config-artifact/roles/inventory/dev.yml', 
-        playbook: '/home/ubuntu/ansible-config-artifact/roles/playbooks/site.yml', 
+        inventory: '/home/ubuntu/ansible-config-artifact/inventory/dev.yml', 
+        playbook: '/home/ubuntu/ansible-config-artifact/playbooks/site.yml', 
         tags: 'tooling-html'
       }
     }
