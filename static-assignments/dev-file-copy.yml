@@ -4,4 +4,3 @@
     - role: nginx
       become: yes
   gather_facts: False
-  ansible.builtin.include: ../dynamic-assignments/env-vars.yml
