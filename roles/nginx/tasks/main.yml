@@ -28,7 +28,7 @@
 
 - name: remove nginx default welcome page
   file:  
-    path: /etc/nginx/sites-enabled/default 
+    path: /usr/share/nginx/html/index.html
     state: absent
   become: true  
   notify: reload nginx
