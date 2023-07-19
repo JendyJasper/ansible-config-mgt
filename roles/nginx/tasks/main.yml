@@ -33,6 +33,12 @@
   become: true  
   notify: reload nginx
 
+- name: remove old files
+  file:  
+    path: /usr/share/nginx/html
+    state: absent
+  become: true  
+
 - name: copy html content to one level up
   copy:
     #src: /var/www/html/html
