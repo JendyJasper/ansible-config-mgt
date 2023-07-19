@@ -16,11 +16,9 @@
 - hosts: nginx, tooling
 - name: Configure Nginx 
   import_playbook: ../static-assignments/dev.yml
-  import_role: nginx
 
 - hosts: tooling
 - name: Configure Nginx 
   import_playbook: ../static-assignments/dev.yml 
-  import_role: nginx
   tags:
     - tooling-html
