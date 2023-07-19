@@ -1,9 +1,19 @@
 ---
 
+<<<<<<< HEAD
 - name: Include dynamic variables 
   tasks:
   # import_playbook: ../static-assignments/common.yml 
     - ansible.builtin.include ../dynamic-assignments/env-vars.yml
+=======
+- hosts: tooling
+  name: Include dynamic variables 
+  tasks:
+  # import_playbook: ../static-assignments/common.yml 
+    - include: ../dynamic-assignments/env-vars.yml
+  # tags:
+  #   - always
+>>>>>>> 307c02a79b4805563d8348a2abf794d90e2ba0ab
 
 - name: Copy file 
   import_playbook: ../static-assignments/dev-file-copy.yml
