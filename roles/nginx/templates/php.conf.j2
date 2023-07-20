@@ -1,7 +1,7 @@
 server {
 
 listen 80;
-server_name "{{ ip_address }}";
+server_name {{ ip_address }};
 root /usr/share/nginx/html;
 index index.php;
  location ~* \.php$ {
