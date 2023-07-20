@@ -1,7 +1,9 @@
 ---
 # Pass in a comma-separated list of repos to use (e.g. "remi,epel"). Used only
 # for RHEL/CentOS.
-php_enablerepo: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm, https://rpms.remirepo.net/enterprise/remi-release-9.rpm"
+php_enablerepo: 
+  - https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+  - sudo yum -y install https://rpms.remirepo.net/enterprise/remi-release-8.rpm
 
 # Extra packages to install (in addition to distro-specific default lists).
 php_packages_extra: []

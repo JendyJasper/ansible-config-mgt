@@ -22,7 +22,7 @@
 - name: copy php.conf.j2 template file
   copy:
     src: ../templates/php.conf.j2
-    dest: /etc/nginx/conf.d/
+    dest: /etc/nginx/conf.d/php.conf
   become: true
   notify: reload nginx
 
