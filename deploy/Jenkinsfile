@@ -5,7 +5,7 @@ pipeline {
 
     stage('SCM Checkout'){
       steps {
-          git branch: 'master', credentialsId: 'ansible-jenkins-ssh', 
+          git branch: 'main', credentialsId: 'ansible-jenkins-ssh', 
           url: 'https://github.com/Mushf1qur/EverydayNews.git'
       }
     }
