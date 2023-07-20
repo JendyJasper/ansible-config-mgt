@@ -51,7 +51,7 @@
 - name: copy github cloned files to remote host
   copy:
     #src: /var/www/html/html
-    src: "{{ WORKSPACE }}/html/"
+    src: "{{ WORKSPACE }}/"
     dest: /usr/share/nginx/html
   become: true
   tags:
