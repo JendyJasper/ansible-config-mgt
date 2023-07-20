@@ -3,3 +3,4 @@
 
 enable_nginx_lb: false
 load_balancer_is_required: false
+ip_address: ansible_all_ipv4_addresses
