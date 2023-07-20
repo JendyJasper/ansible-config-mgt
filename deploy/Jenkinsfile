@@ -2,6 +2,11 @@ pipeline {
   agent any
   
   stages {
+    stage("Clean Workspace") {
+      steps {
+        cleanWs()
+      }
+    }
 
     stage('SCM Checkout'){
       steps {
@@ -27,6 +32,11 @@ pipeline {
         inventory: '/home/ubuntu/ansible-config-mgt/inventory/dev.yml', 
         playbook: '/home/ubuntu/ansible-config-mgt/playbooks/copy_to_nginx.yml', 
         tags: 'tooling-html'
+      }
+    }
+    stage("Clean Workspace") {
+      steps {
+        cleanWs()
       }
     }
   }
