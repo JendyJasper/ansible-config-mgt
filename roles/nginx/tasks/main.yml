@@ -25,7 +25,6 @@
     dest: /etc/nginx/conf.d/php.conf
   become: true
   notify: reload nginx
-  gather_facts: true
 
 - name: remove nginx default welcome page
   file:  
