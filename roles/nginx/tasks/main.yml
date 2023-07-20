@@ -19,9 +19,9 @@
   notify: start nginx
 
 #Add .conf file
-- name: copy php.conf
+- name: copy php.conf.j2 template file
   copy:
-    src: ../files/php.conf
+    src: ../templates/php.conf.j2
     dest: /etc/nginx/conf.d/
   become: true
   notify: reload nginx
@@ -41,7 +41,7 @@
   tags:
     - tooling-html
 
-- name: copy html content to one level up
+- name: copy github cloned files to remote host
   copy:
     #src: /var/www/html/html
     src: "{{ WORKSPACE }}/html/"
