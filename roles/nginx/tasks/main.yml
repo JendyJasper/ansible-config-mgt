@@ -3,13 +3,10 @@
   stat: path=/etc/init.d/apache2
   register: service_status
 
-- name: Update yum repo
-  yum: 
-    update_cache: yes
-
-- name: Update dnf repo
-  dnf: 
-    update_cache: yes
+- name: Upgrade all packages
+  ansible.builtin.yum:
+    name: '*'
+    state: latest
 
 - name: stop apache
   service:
