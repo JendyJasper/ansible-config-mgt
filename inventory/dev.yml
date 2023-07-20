@@ -1,6 +1,7 @@
 [tooling]
 172.31.91.161 ansible_ssh_user='ec2-user'
 172.31.81.9 ansible_ssh_user='ec2-user'
+44.205.250.131 ansible_ssh_user='ec2-user'
 
 [db]
 172.31.87.182 ansible_ssh_user='ubuntu' 
