@@ -11,7 +11,7 @@
   roles:
     - role: nginx
       become: yes
-  gather_facts: False
+  gather_facts: true
 
 - hosts: tooling
   roles:
@@ -19,3 +19,5 @@
       become: yes
   tags:
       - tooling-html
+  gather_facts: true
+
