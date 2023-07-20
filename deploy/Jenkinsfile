@@ -34,7 +34,7 @@ pipeline {
         tags: 'tooling-html'
       }
     }
-    stage("Clean Workspace") {
+    stage("Clean Workspace2") {
       steps {
         cleanWs()
       }
