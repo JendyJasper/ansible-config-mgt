@@ -3,11 +3,6 @@
   stat: path=/etc/init.d/apache2
   register: service_status
 
-- name: Upgrade all packages
-  ansible.builtin.yum:
-    name: '*'
-    state: latest
-
 - name: stop apache
   service:
     name: apache2
