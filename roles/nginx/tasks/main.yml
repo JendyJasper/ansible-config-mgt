@@ -18,13 +18,13 @@
   become: true
   notify: start nginx
 
-#update .conf file
-# - name: copy nginx.conf
-#   copy:
-#     src: ../files/nginx.conf
-#     dest: /etc/nginx/nginx.conf
-#   become: true
-#   notify: reload nginx
+#Add .conf file
+- name: copy php.conf
+  copy:
+    src: ../files/php.conf
+    dest: /etc/nginx/conf.d/
+  become: true
+  notify: reload nginx
 
 - name: remove nginx default welcome page
   file:  
