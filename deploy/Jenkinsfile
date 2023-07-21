@@ -29,6 +29,16 @@ pipeline {
         tags: 'tooling-html'
       }
     }
+
+    stage("Copy html") {
+      steps {
+        ansiblePlaybook credentialsId: 'ansible-jenkins-ssh', 
+        disableHostKeyChecking: true, installation: 'ansible', 
+        inventory: '/home/ubuntu/ansible-config-mgt/inventory/dev.yml', 
+        playbook: '/home/ubuntu/ansible-config-mgt/playbooks/dev_data_base.yml'
+      }
+    }
+
     stage("Clean Workspace2") {
       steps {
         cleanWs()

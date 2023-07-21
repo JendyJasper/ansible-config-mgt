@@ -1,5 +1,0 @@
----
-- hosts: uat-database
-  roles:
-    - role: mysql
-      become: yes
