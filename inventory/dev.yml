@@ -1,6 +1,6 @@
 [tooling]
-172.31.92.151 ansible_ssh_user='ubuntu'
-
+172.31.93.69 ansible_ssh_user='ubuntu'
+172.31.86.181 ansible_ssh_user='ubuntu'
 
 
 #[db]
