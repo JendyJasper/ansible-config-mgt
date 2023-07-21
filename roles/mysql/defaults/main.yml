@@ -120,12 +120,12 @@ mysql_databases:
 # Users.
 mysql_users: 
   - name: webaccess
-    host: 172.31.92.174
+    host: 172.31.91.233
     password: password
     priv: "*.*:ALL"
 
   - name: webaccess2
-    host: 172.31.92.174
+    host: 172.31.91.233
     password: password
     priv: "*.*:ALL"
 
