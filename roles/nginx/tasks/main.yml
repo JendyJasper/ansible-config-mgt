@@ -52,7 +52,7 @@
 - name: link nginx config file to sites enabled
   file:
     src: /etc/nginx/sites-available/tooling.dev.jendyjasper.com
-    dest: /etc/nginx/sites-enabled/
+    dest: /etc/nginx/sites-enabled
     state: link
   tags:
     - tooling-html
