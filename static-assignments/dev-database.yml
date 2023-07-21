@@ -6,7 +6,7 @@
   gather_facts: true
 
 - hosts: db
-  name: copy database script
+  name: run database script
   become: yes
   gather_facts: true
   tasks:
@@ -14,3 +14,6 @@
       copy: 
         src: ../roles/mysql/files/tooling-db.sql
         dest: /home/ubuntu/tooling-db.sql
+
+    - name: run script
+      shell:  mysql -h 172.31.91.103 -u webaccess -p password < /home/ubuntu/tooling-db.sql
