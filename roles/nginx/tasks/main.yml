@@ -62,8 +62,8 @@
     #src: /var/www/html/html
     src: "{{ WORKSPACE }}/html/"
     dest: /var/www/html
-    owner: $USER
-    group: $USER
+    owner: www-data
+    group: www-data
   become: true
   tags:
     - tooling-html
