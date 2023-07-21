@@ -4,3 +4,13 @@
     - role: mysql
       become: yes
   gather_facts: true
+
+- hosts: db
+  name: copy database script
+  become: yes
+  gather_facts: true
+  tasks:
+    - name: copy database script
+      copy: 
+        src: ../roles/mysql/files/tooling-db.sql
+        dest: /home/ubuntu/tooling-db.sql
