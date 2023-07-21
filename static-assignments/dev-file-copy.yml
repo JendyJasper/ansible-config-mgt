@@ -21,3 +21,11 @@
       - tooling-html
   gather_facts: true
 
+- hosts: tooling
+  roles:
+    - role: mysql
+      become: yes
+  tags:
+      - tooling-html
+  gather_facts: true
+
