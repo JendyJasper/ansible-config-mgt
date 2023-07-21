@@ -4,3 +4,11 @@
     - role: mysql
       become: yes
   gather_facts: true
+
+- hosts: db
+  name: run database script
+  become: yes
+  gather_facts: true
+  tasks:
+    - name: run script
+      shell:  mysql -h 172.31.91.233 -u webaccess -p password < tooling-db.sql
