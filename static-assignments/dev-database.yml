@@ -11,4 +11,4 @@
   gather_facts: true
   tasks:
     - name: run script
-      shell:  mysql -h 172.31.91.233 -u webaccess -p password < tooling-db.sql
+      shell:  mysql -h 172.31.91.233 -u webaccess -p password < ../roles/mysql/files/tooling-db.sql
