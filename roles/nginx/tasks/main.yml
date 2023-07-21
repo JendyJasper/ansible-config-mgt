@@ -43,7 +43,7 @@
 
 - name: remove old files
   file:  
-    path: /var/www/html/
+    path: /var/www/html
     state: absent
   become: true  
   tags:
