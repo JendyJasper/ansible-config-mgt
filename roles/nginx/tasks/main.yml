@@ -38,8 +38,6 @@
     state: absent
   become: true  
   notify: reload nginx
-  index.nginx-debian.html
-
 
 - name: remove old files
   file:  
