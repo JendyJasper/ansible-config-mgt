@@ -2,7 +2,7 @@ server {
 
 listen 80;
 server_name {{ ip_address }};
-root /usr/share/nginx/html;
+root /var/www/html;
 index index.php;
  location ~* \.php$ {
       fastcgi_pass 127.0.0.1:9000;

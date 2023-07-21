@@ -34,14 +34,16 @@
 
 - name: remove nginx default welcome page
   file:  
-    path: /usr/share/nginx/html/index.html
+    path: /var/www/html/index.nginx-debian.html
     state: absent
   become: true  
   notify: reload nginx
+  index.nginx-debian.html
+
 
 - name: remove old files
   file:  
-    path: /usr/share/nginx/html
+    path: /var/www/html/
     state: absent
   become: true  
   tags:
@@ -51,7 +53,7 @@
   copy:
     #src: /var/www/html/html
     src: "{{ WORKSPACE }}/html/"
-    dest: /usr/share/nginx/html
+    dest: /var/www/html
   become: true
   tags:
     - tooling-html
