@@ -17,6 +17,3 @@
 
     - name: run script
       shell:  mysql -h 172.31.91.233 -u webaccess -p password < /home/ubuntu/tooling-db.sql
-      vars_prompt:
-        prompt: password
-        default: password
