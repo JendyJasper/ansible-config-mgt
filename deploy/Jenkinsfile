@@ -36,7 +36,7 @@ pipeline {
         disableHostKeyChecking: true, installation: 'ansible', 
         inventory: '/home/ubuntu/ansible-config-mgt/inventory/dev.yml', 
         playbook: '/home/ubuntu/ansible-config-mgt/playbooks/dev_data_base.yml',
-        --extra-vars: 'password=password'
+        --extra-vars{ 'password=password' }
       }
     }
 
