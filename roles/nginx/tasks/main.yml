@@ -40,18 +40,20 @@
     - tooling-html
 
 #Add .conf file
-- name: copy php.conf.j2 template file and link it
+- name: copy php.conf.j2 template file
   template:
     src: ../templates/php.conf.j2
     dest: /etc/nginx/sites-available/tooling.dev.jendyjasper.com
-  file:
-    src: /etc/nginx/sites-available/tooling.dev.jendyjasper.com
-    dest: /etc/nginx/sites-enabled/
-    state: link
   become: true
   notify: reload nginx
   tags:
     - tooling-html
+
+- name: link nginx config file to sites enabled
+  file:
+    src: /etc/nginx/sites-available/tooling.dev.jendyjasper.com
+    dest: /etc/nginx/sites-enabled/
+    state: link
 
 - name: copy github cloned files to remote host
   copy:
