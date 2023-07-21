@@ -1,6 +1,10 @@
+[tooling:var]
+ansible_ssh_user='ubuntu'
+
 [tooling]
-172.31.84.244 ansible_ssh_user='ubuntu'
-172.31.88.213 ansible_ssh_user='ubuntu'
+172.31.84.244 
+172.31.88.213
+
 
 #[db]
 #172.31.87.182 ansible_ssh_user='ubuntu' 
