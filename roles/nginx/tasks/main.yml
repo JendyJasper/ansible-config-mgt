@@ -69,3 +69,9 @@
   tags:
     - tooling-html
   # command: cp -r /var/www/html/html/ /var/www/
+
+- name: Install mysql client
+  apt:
+    name: mysql-client
+    state: present
+  become: true
