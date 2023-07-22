@@ -37,6 +37,7 @@
     path: 
       - /var/www/html/index.nginx-debian.html
       - /etc/nginx/sites-enabled/default
+      - /usr/share/nginx/html/
     state: absent
   become: true  
   notify: reload nginx
@@ -53,15 +54,15 @@
   tags:
     - nginx-setup
 
-# - name: link nginx config file to sites enabled
-#   file:
-#     src: /etc/nginx/sites-available/jendyjasper.com
-#     dest: /etc/nginx/sites-enabled/default
-#     state: link
-#   # notify: reload nginx
-#   become: true
-#   tags:
-#     - nginx-setup
+- name: link nginx config file to sites enabled
+  file:
+    src: /etc/nginx/sites-available/jendyjasper.com
+    dest: /etc/nginx/nginx.conf
+    state: link
+  # notify: reload nginx
+  become: true
+  tags:
+    - nginx-setup
 
 - name: copy host file
   copy:

@@ -9,6 +9,7 @@ server {
  
       location / {
         proxy_pass http://172.31.91.142:8080;
+        #include /etc/nginx/proxy_params; for ubuntu
         include /etc/nginx/fastcgi_params;
       }
  

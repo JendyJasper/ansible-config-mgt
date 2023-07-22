@@ -29,6 +29,7 @@
     path: 
       - /var/www/html/index.nginx-debian.html
       - /etc/nginx/sites-enabled/default
+      - /usr/share/nginx/html/
     state: absent
   become: true  
   notify: reload nginx
