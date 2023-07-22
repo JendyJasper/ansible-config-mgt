@@ -2,4 +2,4 @@
   name: configure Nginx load balancer
   tasks:
     - name: Set up Nginx load balancer on ubuntu
-      import_tasks: ../roles/nginx/tasks/set-up-lb.yml
+      include_tasks: ../roles/nginx/tasks/set-up-lb.yml
