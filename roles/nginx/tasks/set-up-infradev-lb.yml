@@ -18,7 +18,6 @@
     state: stopped
   when: service_status.stat.exists
   become: true
-  notify: start nginx
   tags:
     - nginx-setup
 
@@ -74,5 +73,5 @@
 - name: reload nginx
   service:
       name: nginx
-      state: reloaded
+      state: restarted
   become: true
