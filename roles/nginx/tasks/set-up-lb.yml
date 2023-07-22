@@ -8,7 +8,7 @@
 - name: Update Apt
   apt:
     update_cache: yes
-  become: true
+    become: true
   tags:
     - nginx-setup
 
