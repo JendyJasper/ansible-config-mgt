@@ -120,6 +120,12 @@ mysql_users:
     priv: "*.*:ALL"
     state: present
 
+  - name: webaccess2
+    host: "%"
+    password: password
+    priv: "*.*:ALL"
+    state: present
+
 mysql_disable_log_bin: false
 
 # Replication settings (replication is only enabled if master/user have values).
