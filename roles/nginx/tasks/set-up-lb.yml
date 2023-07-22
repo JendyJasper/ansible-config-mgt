@@ -45,9 +45,11 @@
     src: /etc/nginx/sites-available/jendyjasper.com
     dest: /etc/nginx/sites-enabled/default
     state: link
+  notify: reload nginx
 
 - name: copy host file
   copy:
     src: ../files/hosts
     dest: /etc/hosts
   become: true
+  notify: reload nginx
