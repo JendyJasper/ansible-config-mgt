@@ -47,7 +47,7 @@
 - name: copy jendyjasper.com.j2 template file
   template:
     src: ../templates/lb-ubuntu-jendyjasper.com.j2
-    dest: /etc/nginx/conf.d/jendyjasper.com
+    dest: /etc/nginx/conf.d/jendyjasper.com.conf
   become: true
   # notify: reload nginx
   tags:
