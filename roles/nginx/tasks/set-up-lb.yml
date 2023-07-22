@@ -37,7 +37,7 @@
     path: 
       - /var/www/html/index.nginx-debian.html
       - /etc/nginx/sites-enabled/default
-      - /usr/share/nginx/html/
+      - /usr/share/nginx/html/index.html
     state: absent
   become: true  
   notify: reload nginx
@@ -59,6 +59,7 @@
     src: /etc/nginx/sites-available/jendyjasper.com.conf
     dest: /etc/nginx/nginx.conf
     state: link
+    force: true
   # notify: reload nginx
   become: true
   tags:
