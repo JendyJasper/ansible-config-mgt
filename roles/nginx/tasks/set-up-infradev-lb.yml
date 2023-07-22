@@ -55,7 +55,7 @@
 
 - name: link nginx config file to sites enabled
   file:
-    src: /etc/nginx/sites-available/infradev.jendyjasper.com
+    src: /etc/nginx/sites-available/infradev.jendyjasper.com.conf
     dest: /etc/nginx/nginx.conf
     state: link
   # notify: reload nginx
