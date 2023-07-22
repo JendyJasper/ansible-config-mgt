@@ -14,7 +14,7 @@ php_packages_extra:
   # - php-cli 
   # - php-gd 
   # - php-curl 
- - php-mysql
+ - php-mysqlnd
 # Default PHP version to install on Debian-based OSes (OS-specific).
 # php_default_version_debian: ""
 
