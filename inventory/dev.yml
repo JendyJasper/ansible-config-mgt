@@ -4,5 +4,5 @@
 [db]
 172.31.91.103 ansible_ssh_user='ubuntu' 
 
-#[nginx]
-#172.31.94.215 ansible_ssh_user='ec2-user'
+[nginx]
+172.31.81.224 ansible_ssh_user='ec2-user'

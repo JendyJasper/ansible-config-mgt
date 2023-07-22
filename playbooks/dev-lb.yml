@@ -1,0 +1,6 @@
+---
+- hosts: nginx
+  name: Set up nginx
+  tasks:
+    name: configure nginx loadbalancer
+    import_playbook: ../static-assignments/dev-lb.yml

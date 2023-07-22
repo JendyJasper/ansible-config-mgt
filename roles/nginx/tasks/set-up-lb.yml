@@ -31,41 +31,22 @@
   become: true  
   notify: reload nginx
 
-- name: remove old files
-  file:  
-    path: /var/www/html
-    state: absent
-  become: true  
-  tags:
-    - tooling-html
-
 #Add .conf file
-- name: copy php.conf.j2 template file
+- name: copy jendyjasper.com.j2 template file
   template:
-    src: ../templates/php.conf.j2
-    dest: /etc/nginx/sites-available/tooling.dev.jendyjasper.com
+    src: ../templates/lb-ubuntu-jendyjasper.com.j2
+    dest: /etc/nginx/sites-available/jendyjasper.com
   become: true
   notify: reload nginx
-  tags:
-    - tooling-html
 
 - name: link nginx config file to sites enabled
   file:
-    src: /etc/nginx/sites-available/tooling.dev.jendyjasper.com
+    src: /etc/nginx/sites-available/jendyjasper.com
     dest: /etc/nginx/sites-enabled/default
     state: link
-  tags:
-    - tooling-html
 
-- name: copy github cloned files to remote host
+- name: copy host file
   copy:
-    #src: /var/www/html/html
-    src: "{{ WORKSPACE }}/html/"
-    dest: /var/www/html
-    owner: www-data
-    group: www-data
-    mode: u=rwx,g=rw,o=rx
+    src: ../files/hosts
+    dest: /etc/hosts
   become: true
-  tags:
-    - tooling-html
-  # command: cp -r /var/www/html/html/ /var/www/
