@@ -24,7 +24,7 @@
     - nginx-setup
 
 - name: install nginx
-  apt: 
+  yum: 
     name: nginx 
     state: latest
   become: true
