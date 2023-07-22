@@ -9,7 +9,7 @@ server {
  
       location / {
         proxy_pass http://172.31.86.181;
-        include /etc/nginx/proxy_params;
+        include /etc/nginx/fastcgi_params;
       }
  
     listen [::]:443 ssl ipv6only=on; # managed by Certbot
