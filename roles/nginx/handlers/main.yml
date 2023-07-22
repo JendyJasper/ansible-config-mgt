@@ -12,4 +12,5 @@
       name: nginx
       state: reloaded
   become: true
+  listen: "reload nginx"
 
