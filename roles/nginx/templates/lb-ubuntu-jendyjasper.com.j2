@@ -15,6 +15,7 @@ server {
       }
  }
 
+#redirect www traffic to non www
  server {
     server_name www.tooling.dev.jendyjasper.com;
     return 301 $scheme://tooling.dev.jendyjasper.com$request_uri;

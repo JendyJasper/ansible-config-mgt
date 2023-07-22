@@ -54,8 +54,8 @@
 
 - name: link nginx config file to sites enabled
   file:
-    src: /etc/nginx/sites-available/jendyjasper.com
-    dest: /etc/nginx/sites-enabled/default
+    src: /etc/nginx/sites-enabled/default 
+    dest: /etc/nginx/sites-available/jendyjasper.com
     state: link
   # notify: reload nginx
   become: true
