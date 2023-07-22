@@ -19,7 +19,7 @@
     state: stopped
   when: service_status.stat.exists
   become: true
-  notify: start nginx
+  # notify: start nginx
   tags:
     - nginx-setup
 
@@ -28,7 +28,7 @@
     name: nginx 
     state: latest
   become: true
-  notify: start nginx
+  # notify: start nginx
   tags:
     - nginx-setup
 

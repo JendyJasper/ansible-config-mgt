@@ -27,7 +27,7 @@
     name: nginx 
     state: latest
   become: true
-  notify: start nginx
+  # notify: start nginx
   tags:
     - nginx-setup
 
