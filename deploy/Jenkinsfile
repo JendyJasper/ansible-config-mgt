@@ -39,6 +39,15 @@ pipeline {
         }
     }
 
+    stage("Setup Reverse Proxy") {
+      steps {
+        ansiblePlaybook credentialsId: 'ansible-jenkins-ssh', 
+        disableHostKeyChecking: true, installation: 'ansible', 
+        inventory: '/home/ubuntu/ansible-config-mgt/inventory/dev.yml', 
+        playbook: '/home/ubuntu/ansible-config-mgt/playbooks/dev-lb.yml'
+        }
+    }
+
     stage("Clean Workspace2") {
       steps {
         cleanWs()
