@@ -5,12 +5,12 @@
   tags:
     - nginx-setup
 
-# - name: Update Apt
-#   apt:
-#     update_cache: yes
-#     become: true
-#   tags:
-#     - nginx-setup
+- name: Update Apt
+  apt:
+    update_cache: yes
+  become: true
+  tags:
+    - nginx-setup
 
 - name: stop apache
   service:
