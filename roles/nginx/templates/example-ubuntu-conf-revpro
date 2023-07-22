@@ -1,0 +1,64 @@
+server {
+ 
+      root /var/www/html;
+ 
+      # Add index.php to the list if you are using PHP
+      index index.php index.html index.htm index.nginx-debian.html;
+ 
+       server_name ci.infradev.jendyjasper.com;
+ 
+      location / {
+        proxy_pass http://172.31.91.142:8080;
+        #include /etc/nginx/proxy_params; for ubuntu
+        include /etc/nginx/fastcgi_params;
+      }
+ 
+    listen [::]:443 ssl ipv6only=on; # managed by Certbot
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/ci.infradev.jendyjasper.com/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/ci.infradev.jendyjasper.com/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+#redirect www traffic to non www
+ server {
+    server_name www.ci.infradev.jendyjasper.com;
+    return 301 $scheme://ci.infradev.jendyjasper.com$request_uri;
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/ci.infradev.jendyjasper.com/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/ci.infradev.jendyjasper.com/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+server {
+    if ($host = ci.infradev.jendyjasper.com) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+      listen 80;
+      listen [::]:80;
+ 
+      server_name ci.infradev.jendyjasper.com;
+    return 404; # managed by Certbot
+
+
+}
+ server {
+    if ($host = www.ci.infradev.jendyjasper.com) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    server_name www.ci.infradev.jendyjasper.com;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
