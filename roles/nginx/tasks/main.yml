@@ -47,7 +47,7 @@
 - name: copy php.conf.j2 template file
   template:
     src: ../templates/php.conf.j2
-    dest: /etc/nginx/conf.d/tooling.dev.jendyjasper.com
+    dest: /etc/nginx/conf.d/tooling.dev.jendyjasper.com.conf
   become: true
   notify: reload nginx
   tags:
