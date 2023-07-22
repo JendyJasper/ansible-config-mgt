@@ -46,6 +46,7 @@
     dest: /etc/nginx/sites-enabled/default
     state: link
   notify: reload nginx
+  become: true
 
 - name: copy host file
   copy:
