@@ -40,7 +40,7 @@
       - /usr/share/nginx/html/index.html
     state: absent
   become: true  
-  notify: reload nginx
+  # notify: reload nginx
   tags:
     - nginx-setup
 

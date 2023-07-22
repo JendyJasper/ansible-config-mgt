@@ -40,7 +40,7 @@
     - /var/www/html/index.nginx-debian.html
     - /etc/nginx/sites-enabled/default
     - /usr/share/nginx/html/index.html
-  notify: reload nginx
+  # notify: reload nginx
 
 #Add .conf file
 - name: copy jendyjasper.com.j2 template file
