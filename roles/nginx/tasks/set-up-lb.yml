@@ -2,11 +2,15 @@
 - name: Check if Apache Exists
   stat: path=/etc/init.d/apache2
   register: service_status
+  tags:
+    - nginx-setup
 
 - name: Update Apt
   apt:
     update_cache: yes
   become: true
+  tags:
+    - nginx-setup
 
 - name: stop apache
   service:
@@ -15,6 +19,8 @@
   when: service_status.stat.exists
   become: true
   notify: start nginx
+  tags:
+    - nginx-setup
 
 - name: install nginx
   apt: 
@@ -22,6 +28,8 @@
     state: latest
   become: true
   notify: start nginx
+  tags:
+    - nginx-setup
 
 - name: remove nginx default welcome page
   file:  
@@ -31,6 +39,8 @@
     state: absent
   become: true  
   notify: reload nginx
+  tags:
+    - nginx-setup
 
 #Add .conf file
 - name: copy jendyjasper.com.j2 template file
@@ -39,6 +49,8 @@
     dest: /etc/nginx/sites-available/jendyjasper.com
   become: true
   notify: reload nginx
+  tags:
+    - nginx-setup
 
 - name: link nginx config file to sites enabled
   file:
@@ -47,6 +59,8 @@
     state: link
   notify: reload nginx
   become: true
+  tags:
+    - nginx-setup
 
 - name: copy host file
   copy:
@@ -54,3 +68,5 @@
     dest: /etc/hosts
   become: true
   notify: reload nginx
+  tags:
+    - nginx-setup

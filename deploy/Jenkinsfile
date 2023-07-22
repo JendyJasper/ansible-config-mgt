@@ -44,7 +44,8 @@ pipeline {
         ansiblePlaybook credentialsId: 'ansible-jenkins-ssh', 
         disableHostKeyChecking: true, installation: 'ansible', 
         inventory: '/home/ubuntu/ansible-config-mgt/inventory/dev.yml', 
-        playbook: '/home/ubuntu/ansible-config-mgt/playbooks/dev-lb.yml'
+        playbook: '/home/ubuntu/ansible-config-mgt/playbooks/dev-lb.yml',
+        tags: 'nginx-setup'
         }
     }
 
