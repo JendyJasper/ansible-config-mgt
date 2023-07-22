@@ -19,3 +19,8 @@ server {
     server_name www.tooling.dev.jendyjasper.com;
     return 301 $scheme://tooling.dev.jendyjasper.com$request_uri;
 }
+
+ server {
+    server_name tooling.dev.jendyjasper.com;
+    return 301 https://tooling.dev.jendyjasper.com$request_uri;
+}
