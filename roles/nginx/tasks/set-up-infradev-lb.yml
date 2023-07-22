@@ -33,15 +33,14 @@
 
 - name: remove nginx default welcome page
   file:  
-    path: 
-      - /var/www/html/index.nginx-debian.html
-      - /etc/nginx/sites-enabled/default
-      - /usr/share/nginx/html/index.html
+    path: "{{ item }}"
     state: absent
   become: true  
+  loop:
+    - /var/www/html/index.nginx-debian.html
+    - /etc/nginx/sites-enabled/default
+    - /usr/share/nginx/html/index.html
   notify: reload nginx
-  tags:
-    - nginx-setup
 
 #Add .conf file
 - name: copy jendyjasper.com.j2 template file
@@ -53,16 +52,16 @@
   tags:
     - nginx-setup
 
-- name: link nginx config file to sites enabled
-  file:
-    src: /etc/nginx/sites-available/infradev.jendyjasper.com.conf
-    dest: /etc/nginx/nginx.conf
-    state: link
-  # notify: reload nginx
-  become: true
-  force: true
-  tags:
-    - nginx-setup
+# - name: link nginx config file to sites enabled
+#   file:
+#     src: /etc/nginx/sites-available/infradev.jendyjasper.com.conf
+#     dest: /etc/nginx/nginx.conf
+#     state: link
+#   # notify: reload nginx
+#   become: true
+#   force: true
+#   tags:
+#     - nginx-setup
 
 - name: copy host file
   copy:

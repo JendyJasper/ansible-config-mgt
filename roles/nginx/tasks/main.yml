@@ -26,12 +26,13 @@
 
 - name: remove nginx default welcome page
   file:  
-    path: 
-      - /var/www/html/index.nginx-debian.html
-      - /etc/nginx/sites-enabled/default
-      - /usr/share/nginx/html/index.html
+    path: "{{ item }}"
     state: absent
   become: true  
+  loop:
+    - /var/www/html/index.nginx-debian.html
+    - /etc/nginx/sites-enabled/default
+    - /usr/share/nginx/html/index.html
   notify: reload nginx
 
 - name: remove old files

@@ -54,16 +54,16 @@
   tags:
     - nginx-setup
 
-- name: link nginx config file to sites enabled
-  file:
-    src: /etc/nginx/sites-available/jendyjasper.com.conf
-    dest: /etc/nginx/nginx.conf
-    state: link
-    force: true
-  # notify: reload nginx
-  become: true
-  tags:
-    - nginx-setup
+# - name: link nginx config file to sites enabled
+#   file:
+#     src: /etc/nginx/sites-available/jendyjasper.com.conf
+#     dest: /etc/nginx/nginx.conf
+#     state: link
+#     force: true
+#   # notify: reload nginx
+#   become: true
+#   tags:
+#     - nginx-setup
 
 - name: copy host file
   copy:
