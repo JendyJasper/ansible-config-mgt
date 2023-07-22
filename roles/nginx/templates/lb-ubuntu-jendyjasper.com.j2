@@ -8,7 +8,7 @@ server {
       server_name tooling.dev.jendyjasper.com;
  
       location / {
-        proxy_pass https://172.31.87.40;
+        proxy_pass http://172.31.87.40;
         include /etc/nginx/proxy_params;
       }
  
