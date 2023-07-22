@@ -5,10 +5,10 @@
   tags:
     - nginx-setup
 
-- name: Update Apt
-  apt:
-    update_cache: yes
-  become: true
+- name: Upgrade all packages
+  yum:
+    name: '*'
+    state: latest
   tags:
     - nginx-setup
 
