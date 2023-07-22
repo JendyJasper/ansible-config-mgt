@@ -1,0 +1,5 @@
+[jenkins]
+172.31.91.142 ansible_ssh_user='ubuntu'
+
+[nginx]
+172.31.91.193 ansible_ssh_user='ubuntu'

@@ -39,12 +39,22 @@ pipeline {
         }
     }
 
-    stage("Setup Reverse Proxy") {
+    stage("Setup Reverse Proxy on Dev") {
       steps {
         ansiblePlaybook credentialsId: 'ansible-jenkins-ssh', 
         disableHostKeyChecking: true, installation: 'ansible', 
         inventory: '/home/ubuntu/ansible-config-mgt/inventory/dev.yml', 
         playbook: '/home/ubuntu/ansible-config-mgt/playbooks/dev-lb.yml',
+        tags: 'nginx-setup'
+        }
+    }
+
+    stage("Setup Reverse Proxy on Infra Dev") {
+      steps {
+        ansiblePlaybook credentialsId: 'ansible-jenkins-ssh', 
+        disableHostKeyChecking: true, installation: 'ansible', 
+        inventory: '/home/ubuntu/ansible-config-mgt/inventory/ci.yml', 
+        playbook: '/home/ubuntu/ansible-config-mgt/playbooks/infradev-lb.yml',
         tags: 'nginx-setup'
         }
     }

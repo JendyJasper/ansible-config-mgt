@@ -7,15 +7,15 @@ server {
       # Add index.php to the list if you are using PHP
       index index.php index.html index.htm index.nginx-debian.html;
  
-      server_name tooling.dev.jendyjasper.com;
+      server_name ci.infradev.jendyjasper.com;
  
       location / {
-        proxy_pass http://172.31.87.40;
+        proxy_pass http://172.31.91.142:8080;
         include /etc/nginx/proxy_params;
       }
  }
 
  server {
-    server_name www.tooling.dev.jendyjasper.com;
+    server_name www.ci.infradev.jendyjasper.com;
     return 301 $scheme://tooling.dev.jendyjasper.com$request_uri;
 }
