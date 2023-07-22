@@ -45,21 +45,21 @@
 - name: copy jendyjasper.com.j2 template file
   template:
     src: ../templates/lb-infradev.jendyjasper.com.j2
-    dest: /etc/nginx/sites-available/infradev.jendyjasper.com
+    dest: /etc/nginx/conf.d/infradev.jendyjasper.com.conf
   become: true
   # notify: reload nginx
   tags:
     - nginx-setup
 
-- name: link nginx config file to sites enabled
-  file:
-    src: /etc/nginx/sites-available/infradev.jendyjasper.com
-    dest: /etc/nginx/sites-enabled/default 
-    state: link
-  # notify: reload nginx
-  become: true
-  tags:
-    - nginx-setup
+# - name: link nginx config file to sites enabled
+#   file:
+#     src: /etc/nginx/sites-available/infradev.jendyjasper.com
+#     dest: /etc/nginx/sites-enabled/default 
+#     state: link
+#   # notify: reload nginx
+#   become: true
+#   tags:
+#     - nginx-setup
 
 - name: copy host file
   copy:
