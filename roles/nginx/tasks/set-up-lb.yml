@@ -48,7 +48,7 @@
     src: ../templates/lb-ubuntu-jendyjasper.com.j2
     dest: /etc/nginx/sites-available/jendyjasper.com
   become: true
-  notify: reload nginx
+  # notify: reload nginx
   tags:
     - nginx-setup
 
@@ -70,3 +70,4 @@
   notify: reload nginx
   tags:
     - nginx-setup
+
