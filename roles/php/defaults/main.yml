@@ -6,7 +6,7 @@ php_enablerepo:
   - sudo yum -y install https://rpms.remirepo.net/enterprise/remi-release-8.rpm
 
 # Extra packages to install (in addition to distro-specific default lists).
-php_packages_extra: []
+php_packages_extra:
   # - libapache2-mod-php
   # - php-cgi
   # - php-common 
