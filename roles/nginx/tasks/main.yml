@@ -65,7 +65,7 @@
   copy:
     #src: /var/www/html/html
     src: "{{ WORKSPACE }}/html/"
-    dest: /var/www/html
+    dest: /usr/share/nginx/html
     # owner: www-data
     # group: www-data
     # mode: u=rwx,g=rw,o=rx
