@@ -3,10 +3,11 @@
   stat: path=/etc/init.d/apache2
   register: service_status
 
-- name: Update Apt
-  apt:
-    update_cache: yes
-  become: true  
+- name: Upgrade all packages
+  yum:
+    name: '*'
+    state: latest
+  become: true
 
 - name: stop apache
   service:
@@ -17,7 +18,7 @@
   notify: start nginx
 
 - name: install nginx
-  apt: 
+  yum: 
     name: nginx 
     state: latest
   become: true
