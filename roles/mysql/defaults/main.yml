@@ -115,7 +115,7 @@ mysql_databases:
 # Users.
 mysql_users: 
   - name: webaccess
-    host: "%"
+    host: "172.31.91.103"
     password: password
     priv: "*.*:ALL"
     state: present
