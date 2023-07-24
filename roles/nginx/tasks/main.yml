@@ -24,12 +24,6 @@
   become: true
   notify: start nginx
 
-- name: install mysql
-  yum: 
-    name: mysql 
-    state: latest
-  become: true
-
 - name: remove nginx default welcome page
   file:  
     path: "{{ item }}"
@@ -79,3 +73,9 @@
   tags:
     - tooling-html
   # command: cp -r /var/www/html/html/ /var/www/
+
+- name: Allow connection to database via http
+  shell: setsebool -P httpd_can_network_connect_db 1
+  become: true
+  tags:
+    - tooling-html
