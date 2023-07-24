@@ -24,6 +24,12 @@
   become: true
   notify: start nginx
 
+- name: install mysql
+  yum: 
+    name: mysql 
+    state: latest
+  become: true
+
 - name: remove nginx default welcome page
   file:  
     path: "{{ item }}"
