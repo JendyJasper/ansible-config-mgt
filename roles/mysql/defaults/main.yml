@@ -120,6 +120,12 @@ mysql_users:
     priv: "*.*:ALL"
     state: present
 
+  - name: web
+    host: "%"
+    password: password
+    priv: "*.*:ALL"
+    state: present
+
   - name: webaccess
     host: 172.31.91.103
     password: password
