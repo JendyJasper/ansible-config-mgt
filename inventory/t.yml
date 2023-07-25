@@ -1,2 +1,0 @@
-[test]
-172.31.88.14 ansible_ssh_user='ec2-user'
