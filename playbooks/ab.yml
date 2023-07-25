@@ -9,7 +9,7 @@
     - name: copy github cloned files to remote host
       copy:
         #src: /var/www/html/html
-        src: "{{ lookup('ansible.builtin.env', 'WORKSPACE')}}/html"
+        src: "{{ lookup('ansible.builtin.env', 'WORKSPACE')}}/html/"
         dest: /usr/share/nginx/html
         # owner: www-data
         # group: www-data
