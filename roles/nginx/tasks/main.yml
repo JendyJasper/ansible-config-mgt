@@ -93,3 +93,9 @@
   become: true
   tags:
     - tooling-html
+
+- name: start nginx
+  service:
+      name: nginx
+      state: started
+  become: true
