@@ -4,4 +4,4 @@
   tasks:
     - name: get workspace
       debug:
-        msg: "'{{ lookup('ansible.builtin.env', 'WORKSPACE')}}' is the home environment variable"
+        msg: "{{ lookup('ansible.builtin.env', 'WORKSPACE')}}"/html

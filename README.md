@@ -47,3 +47,19 @@ Tutorial to enable your server to connect to a database over HTTP(Especially for
 
 Tutorial to print the actual database connection error which should help during debugging
   -  https://www.plus2net.com/php_tutorial/mysqli_connection.php
+
+Tutorial to access the environment variables of the machine which ansible is running from / and also to access the Jenkins environment variables if you are runnimg ansible from jenkins
+  - https://docs.ansible.com/ansible/latest/collections/ansible/builtin/env_lookup.html#examples
+  - https://github.com/jenkinsci/ansible-plugin/blob/main/README.md
+  - https://wiki.jenkins.io/display/JENKINS/Building+a+software+project
+
+    - examples code:
+    ```
+    ---
+    - hosts: test
+      name: print workspace
+      tasks:
+        - name: get workspace
+          debug:
+            msg: "'{{ lookup('ansible.builtin.env', 'WORKSPACE')}}' is the workspace environment variable"
+    ```
