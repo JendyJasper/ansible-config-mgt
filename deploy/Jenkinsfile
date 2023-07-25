@@ -10,59 +10,68 @@ pipeline {
       }
     }
 
-    stage('Install Nginx'){
-      steps {
-        ansiblePlaybook credentialsId: 'ansible-jenkins-ssh', 
-        disableHostKeyChecking: true, installation: 'ansible', 
-        inventory: '/home/ubuntu/ansible-config-mgt/inventory/dev.yml', 
-        playbook: '/home/ubuntu/ansible-config-mgt/playbooks/site.yml', 
-        skippedTags: 'tooling-html'
-      }
-    }
+    // stage('Install Nginx'){
+    //   steps {
+    //     ansiblePlaybook credentialsId: 'ansible-jenkins-ssh', 
+    //     disableHostKeyChecking: true, installation: 'ansible', 
+    //     inventory: '/home/ubuntu/ansible-config-mgt/inventory/dev.yml', 
+    //     playbook: '/home/ubuntu/ansible-config-mgt/playbooks/site.yml', 
+    //     skippedTags: 'tooling-html'
+    //   }
+    // }
 
-    stage("Copy html") {
-      steps {
-        ansiblePlaybook credentialsId: 'ansible-jenkins-ssh', 
-        disableHostKeyChecking: true, installation: 'ansible', 
-        inventory: '/home/ubuntu/ansible-config-mgt/inventory/dev.yml', 
-        playbook: '/home/ubuntu/ansible-config-mgt/playbooks/copy_to_nginx.yml', 
-        tags: 'tooling-html'
-      }
-    }
+    // stage("Copy html") {
+    //   steps {
+    //     ansiblePlaybook credentialsId: 'ansible-jenkins-ssh', 
+    //     disableHostKeyChecking: true, installation: 'ansible', 
+    //     inventory: '/home/ubuntu/ansible-config-mgt/inventory/dev.yml', 
+    //     playbook: '/home/ubuntu/ansible-config-mgt/playbooks/copy_to_nginx.yml', 
+    //     tags: 'tooling-html'
+    //   }
+    // }
 
-    stage("Setup Myqsl") {
+    // stage("Setup Myqsl") {
+    //   steps {
+    //     ansiblePlaybook credentialsId: 'ansible-jenkins-ssh', 
+    //     disableHostKeyChecking: true, installation: 'ansible', 
+    //     inventory: '/home/ubuntu/ansible-config-mgt/inventory/dev.yml', 
+    //     playbook: '/home/ubuntu/ansible-config-mgt/playbooks/dev_data_base.yml'
+    //     }
+    // }
+
+    // stage("Setup Reverse Proxy on Dev") {
+    //   steps {
+    //     ansiblePlaybook credentialsId: 'ansible-jenkins-ssh', 
+    //     disableHostKeyChecking: true, installation: 'ansible', 
+    //     inventory: '/home/ubuntu/ansible-config-mgt/inventory/dev.yml', 
+    //     playbook: '/home/ubuntu/ansible-config-mgt/playbooks/dev-lb.yml',
+    //     tags: 'nginx-setup'
+    //     }
+    // }
+
+    // stage("Setup Reverse Proxy on Infra Dev") {
+    //   steps {
+    //     ansiblePlaybook credentialsId: 'ansible-jenkins-ssh', 
+    //     disableHostKeyChecking: true, installation: 'ansible', 
+    //     inventory: '/home/ubuntu/ansible-config-mgt/inventory/ci.yml', 
+    //     playbook: '/home/ubuntu/ansible-config-mgt/playbooks/infradev-lb.yml',
+    //     tags: 'nginx-setup'
+    //     }
+    // }
+
+      stage("WORKSPACE") {
       steps {
         ansiblePlaybook credentialsId: 'ansible-jenkins-ssh', 
         disableHostKeyChecking: true, installation: 'ansible', 
-        inventory: '/home/ubuntu/ansible-config-mgt/inventory/dev.yml', 
-        playbook: '/home/ubuntu/ansible-config-mgt/playbooks/dev_data_base.yml'
+        inventory: '/home/ubuntu/ansible-config-mgt/inventory/t.yml', 
+        playbook: '/home/ubuntu/ansible-config-mgt/playbooks/ab.yml'
         }
     }
 
-    stage("Setup Reverse Proxy on Dev") {
-      steps {
-        ansiblePlaybook credentialsId: 'ansible-jenkins-ssh', 
-        disableHostKeyChecking: true, installation: 'ansible', 
-        inventory: '/home/ubuntu/ansible-config-mgt/inventory/dev.yml', 
-        playbook: '/home/ubuntu/ansible-config-mgt/playbooks/dev-lb.yml',
-        tags: 'nginx-setup'
-        }
-    }
-
-    stage("Setup Reverse Proxy on Infra Dev") {
-      steps {
-        ansiblePlaybook credentialsId: 'ansible-jenkins-ssh', 
-        disableHostKeyChecking: true, installation: 'ansible', 
-        inventory: '/home/ubuntu/ansible-config-mgt/inventory/ci.yml', 
-        playbook: '/home/ubuntu/ansible-config-mgt/playbooks/infradev-lb.yml',
-        tags: 'nginx-setup'
-        }
-    }
-
-    stage("Clean Workspace2") {
-      steps {
-        cleanWs()
-      }
-    }
+    // stage("Clean Workspace2") {
+    //   steps {
+    //     cleanWs()
+    //   }
+    // }
   }
 }
