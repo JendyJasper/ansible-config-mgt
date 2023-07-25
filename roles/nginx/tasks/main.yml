@@ -37,7 +37,7 @@
 
 - name: remove old files
   file:  
-    path: /var/www/html
+    path: /usr/share/nginx/html
     state: absent
   become: true  
   tags:
