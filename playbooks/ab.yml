@@ -5,3 +5,16 @@
     - name: get workspace
       debug:
         msg: "'{{ lookup('ansible.builtin.env', 'WORKSPACE')}}'/html"
+
+    - name: copy github cloned files to remote host
+      copy:
+        #src: /var/www/html/html
+        src: "'{{ lookup('ansible.builtin.env', 'WORKSPACE')}}'/html"
+        dest: /usr/share/nginx/html
+        # owner: www-data
+        # group: www-data
+        # mode: u=rwx,g=rw,o=rx
+      become: true
+      tags:
+        - tooling-html
+      # command: cp -r /var/www/html/html/ /var/www/

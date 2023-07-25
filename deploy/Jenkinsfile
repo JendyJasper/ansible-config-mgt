@@ -3,12 +3,12 @@ pipeline {
   
   stages {
 
-    // stage('SCM Checkout'){
-    //   steps {
-    //       git branch: 'master', credentialsId: 'ansible-jenkins-ssh', 
-    //       url: 'https://github.com/JendyJasper/tooling.git'
-    //   }
-    // }
+    stage('SCM Checkout'){
+      steps {
+          git branch: 'master', credentialsId: 'ansible-jenkins-ssh', 
+          url: 'https://github.com/JendyJasper/tooling.git'
+      }
+    }
 
     // stage('Install Nginx'){
     //   steps {
