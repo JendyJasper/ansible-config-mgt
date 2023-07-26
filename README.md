@@ -63,3 +63,5 @@ Tutorial to access the environment variables of the machine which ansible is run
           debug:
             msg: "'{{ lookup('ansible.builtin.env', 'WORKSPACE')}}' is the workspace environment variable"
     ```
+Tutorial on How To Install JFrog Artifactory on Ubuntu 20.04 LTS
+  - https://computingforgeeks.com/how-to-install-jfrog-artifactory-on-ubuntu-linux/?expand_article=1

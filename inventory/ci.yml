@@ -1,5 +1,9 @@
 [jenkins]
 172.31.91.142 ansible_ssh_user='ubuntu'
 
+[Artifactory]
+172.31.87.16 ansible_ssh_user='ubuntu'
+
 [nginx]
 172.31.88.14
+
