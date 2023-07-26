@@ -65,17 +65,21 @@
 #   tags:
 #     - nginx-setup
 
-- name: copy host file
-  copy:
-    src: ../files/hosts
-    dest: /etc/hosts
-  become: true
-  # notify: reload nginx
-  tags:
-    - nginx-setup
+# - name: copy host file
+#   copy:
+#     src: ../files/hosts
+#     dest: /etc/hosts
+#   become: true
+#   # notify: reload nginx
+#   tags:
+#     - nginx-setup
 
 - name: reload nginx
   service:
       name: nginx
       state: reloaded
+  become: true
+
+- name: Allow connection via proxy
+  shell: setsebool -P httpd_can_network_relay 1
   become: true

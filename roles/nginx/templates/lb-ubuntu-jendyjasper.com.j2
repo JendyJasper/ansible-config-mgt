@@ -5,60 +5,60 @@ server {
       # Add index.php to the list if you are using PHP
       index index.php;
  
-      server_name tooling.dev.jendyjasper.com;
+      server_name tooling.sit.jendyjasper.com;
  
       location / {
-        proxy_pass http://3.87.34.95;
+        proxy_pass http://54.85.100.183;
         include /etc/nginx/fastcgi_params;
       }
 
 
-    listen [::]:443 ssl ipv6only=on; # managed by Certbot
-    listen 443 ssl; # managed by Certbot
-    ssl_certificate /etc/letsencrypt/live/tooling.dev.jendyjasper.com/fullchain.pem; # managed by Certbot
-    ssl_certificate_key /etc/letsencrypt/live/tooling.dev.jendyjasper.com/privkey.pem; # managed by Certbot
-    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
-    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+    #listen [::]:443 ssl ipv6only=on; # managed by Certbot
+    #listen 443 ssl; # managed by Certbot
+    #ssl_certificate /etc/letsencrypt/live/tooling.dev.jendyjasper.com/fullchain.pem; # managed by Certbot
+    #ssl_certificate_key /etc/letsencrypt/live/tooling.dev.jendyjasper.com/privkey.pem; # managed by Certbot
+    #include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    #ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
 
 }
 
 #redirect www traffic to non www
  server {
-    server_name www.tooling.dev.jendyjasper.com;
+    server_name www.tooling.sit.jendyjasper.com;
     return 301 $scheme://tooling.dev.jendyjasper.com$request_uri;
 
 
 
-    listen 443 ssl; # managed by Certbot
-    ssl_certificate /etc/letsencrypt/live/tooling.dev.jendyjasper.com/fullchain.pem; # managed by Certbot
-    ssl_certificate_key /etc/letsencrypt/live/tooling.dev.jendyjasper.com/privkey.pem; # managed by Certbot
-    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
-    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+#    listen 443 ssl; # managed by Certbot
+ #   ssl_certificate /etc/letsencrypt/live/tooling.dev.jendyjasper.com/fullchain.pem; # managed by Certbot
+  #  ssl_certificate_key /etc/letsencrypt/live/tooling.dev.jendyjasper.com/privkey.pem; # managed by Certbot
+   # include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    #ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
 
 }
-server {
-    if ($host = tooling.dev.jendyjasper.com) {
-        return 301 https://$host$request_uri;
-    } # managed by Certbot
+#server {
+ #   if ($host = tooling.dev.jendyjasper.com) {
+  #      return 301 https://$host$request_uri;
+   # } # managed by Certbot
 
 
-      listen 80;
-      listen [::]:80;
+    #  listen 80;
+     # listen [::]:80;
  
-      server_name tooling.dev.jendyjasper.com;
-    return 404; # managed by Certbot
+      #server_name tooling.dev.jendyjasper.com;
+    #return 404; # managed by Certbot
 
 
-}
- server {
-    if ($host = www.tooling.dev.jendyjasper.com) {
-        return 301 https://$host$request_uri;
-    } # managed by Certbot
+#}
+ #server {
+  #  if ($host = www.tooling.dev.jendyjasper.com) {
+   #     return 301 https://$host$request_uri;
+    #} # managed by Certbot
 
 
-    server_name www.tooling.dev.jendyjasper.com;
-    listen 80;
-    return 404; # managed by Certbot
+    #server_name www.tooling.dev.jendyjasper.com;
+    #listen 80;
+    #return 404; # managed by Certbot
 
 
-}
+#}
