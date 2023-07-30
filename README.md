@@ -80,14 +80,14 @@ AWS User Data example
   ```
 #!/bin/bash
 yum update -y
-yum install epel-release -y
+yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm -y
 yum update -y
 yum install -y nginx
 systemctl start nginx
 systemctl enable nginx
 yum -y install wget  
 yum install python3 -y
-yum install ntp -y
+yum install chrony -y
 yum install net-tools -y
 yum install vim-enhanced -y
 yum install telnet telnet-server -y
