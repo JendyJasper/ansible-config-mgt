@@ -65,3 +65,6 @@ Tutorial to access the environment variables of the machine which ansible is run
     ```
 Tutorial on How To Install JFrog Artifactory on Ubuntu 20.04 LTS
   - https://computingforgeeks.com/how-to-install-jfrog-artifactory-on-ubuntu-linux/?expand_article=1
+
+How to save a file in vscode-remote SSH with a non-root user privileges
+ - https://stackoverflow.com/questions/56291492/how-to-save-a-file-in-vscode-remote-ssh-with-a-non-root-user-privileges
