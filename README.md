@@ -66,8 +66,29 @@ Tutorial to access the environment variables of the machine which ansible is run
 Tutorial on How To Install JFrog Artifactory on Ubuntu 20.04 LTS
   - https://computingforgeeks.com/how-to-install-jfrog-artifactory-on-ubuntu-linux/?expand_article=1
 
+Create an EC2 Instance With EC2 User Data Script 
+ - https://www.geeksforgeeks.org/create-an-ec2-instance-with-ec2-user-data-script-to-launch-website/
+
 How to save a file in vscode-remote SSH with a non-root user privileges
  - https://stackoverflow.com/questions/56291492/how-to-save-a-file-in-vscode-remote-ssh-with-a-non-root-user-privileges
 
 RHEL/CENTOS Image
  - RHEL-8.2.0_HVM-20210907-x86_64-0-Hourly2-GP2
+
+AWS User Data example
+  ```
+#!/bin/bash
+yum update -y
+yum install epel-release -y
+yum update -y
+yum install -y nginx
+systemctl start nginx
+systemctl enable nginx
+yum -y install wget  
+yum install python3 -y
+yum install ntp -y
+yum install net-tools -y
+yum install vim-enhanced -y
+yum install telnet telnet-server -y
+yum install htop -y
+```
