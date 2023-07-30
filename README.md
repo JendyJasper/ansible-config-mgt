@@ -76,6 +76,7 @@ RHEL/CENTOS Image
  - RHEL-8.2.0_HVM-20210907-x86_64-0-Hourly2-GP2
 
 AWS User Data example
+ - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html
   ```
 #!/bin/bash
 yum update -y
