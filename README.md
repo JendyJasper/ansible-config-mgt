@@ -68,3 +68,6 @@ Tutorial on How To Install JFrog Artifactory on Ubuntu 20.04 LTS
 
 How to save a file in vscode-remote SSH with a non-root user privileges
  - https://stackoverflow.com/questions/56291492/how-to-save-a-file-in-vscode-remote-ssh-with-a-non-root-user-privileges
+
+RHEL/CENTOS Image
+ - RHEL-8.2.0_HVM-20210907-x86_64-0-Hourly2-GP2
