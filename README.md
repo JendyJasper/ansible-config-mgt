@@ -96,6 +96,7 @@ yum install htop -y
 
 Redirect HTTP requests to HTTPS using an Application Load Balancer
  - https://repost.aws/knowledge-center/elb-redirect-http-to-https-using-alb#
+ - https://www.youtube.com/watch?v=E5TkqBIB4fY
 
 NGINX configuration to forward request on to AWS load balancers (ELS, ALB)
  - https://stackoverflow.com/questions/69957424/nginx-configuration-to-forward-request-on-to-alb
