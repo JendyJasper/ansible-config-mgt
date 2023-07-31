@@ -106,3 +106,19 @@ Amazon AWS EC2 - How to restrict traffic to be received only from Elastic Load B
  - https://stackoverflow.com/questions/49227466/aws-instance-only-allow-traffic-from-load-balancer
  - https://stackoverflow.com/questions/45416882/aws-security-group-include-another-security-group
  - https://docs.aws.amazon.com/vpc/latest/userguide/security-group-rules.html
+
+How To Create a Self-Signed SSL Certificate for Apache on CentOS 8
+ - https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-apache-on-centos-8
+
+How To Create a Self-Signed SSL Certificate for Nginx on CentOS 7
+ - https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-nginx-on-centos-7
+
+How To Create a Self-Signed SSL Certificate for Nginx in Ubuntu 20.04
+ - https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-nginx-in-ubuntu-20-04-1
+
+How To Create a Self-Signed SSL Certificate for Apache in Ubuntu 20.04
+ - https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-apache-in-ubuntu-20-04
+
+AWS Cloud Solution For 2 Company Websites Using A Reverse Proxy Technology 
+ - https://github.com/JendyJasper/ACS-project-config
+ - https://youtu.be/XhmIBMzss5M
