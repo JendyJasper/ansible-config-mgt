@@ -93,3 +93,15 @@ yum install vim-enhanced -y
 yum install telnet telnet-server -y
 yum install htop -y
 ```
+
+Redirect HTTP requests to HTTPS using an Application Load Balancer
+ - https://repost.aws/knowledge-center/elb-redirect-http-to-https-using-alb#
+
+NGINX configuration to forward request on to AWS load balancers (ELS, ALB)
+ - https://stackoverflow.com/questions/69957424/nginx-configuration-to-forward-request-on-to-alb
+
+Amazon AWS EC2 - How to restrict traffic to be received only from Elastic Load Balancer or from Particular instances, even tho their IP addresses are dynamic
+ - https://stackoverflow.com/questions/52421576/amazon-aws-ec2-how-to-restrict-traffic-to-be-received-only-from-elastic-load-b
+ - https://stackoverflow.com/questions/49227466/aws-instance-only-allow-traffic-from-load-balancer
+ - https://stackoverflow.com/questions/45416882/aws-security-group-include-another-security-group
+ - https://docs.aws.amazon.com/vpc/latest/userguide/security-group-rules.html
