@@ -122,3 +122,6 @@ How To Create a Self-Signed SSL Certificate for Apache in Ubuntu 20.04
 AWS Cloud Solution For 2 Company Websites Using A Reverse Proxy Technology 
  - https://github.com/JendyJasper/ACS-project-config
  - https://youtu.be/XhmIBMzss5M
+
+Activating SSH Agent and setting it up for port forwarding
+ - https://www.linode.com/docs/guides/using-ssh-agent/
