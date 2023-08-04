@@ -126,11 +126,12 @@ AWS Cloud Solution For 2 Company Websites Using A Reverse Proxy Technology
 Activating SSH Agent and setting it up for port forwarding
  - https://www.linode.com/docs/guides/using-ssh-agent/
 
-Add a user as a sudo user
+Add a user as a sudo user. You should be able to run any sudo command if you are logged in as vboxuser. replace vboxuser according to your username
    ```
   run su root and enter your password
   run sudo su
   run adduser vboxuser sudo
   then run su vboxuser
+  run sudo apt update
   run sudo apt upgrade
   ```
