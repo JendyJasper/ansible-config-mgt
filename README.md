@@ -125,3 +125,12 @@ AWS Cloud Solution For 2 Company Websites Using A Reverse Proxy Technology
 
 Activating SSH Agent and setting it up for port forwarding
  - https://www.linode.com/docs/guides/using-ssh-agent/
+
+Add a user as a sudo user
+   ```
+  run su root and enter your password
+  run sudo su
+  run adduser vboxuser sudo
+  then run su vboxuser
+  run sudo apt upgrade
+  ```
