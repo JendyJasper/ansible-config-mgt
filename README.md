@@ -135,3 +135,6 @@ Add a user as a sudo user. You should be able to run any sudo command if you are
   run sudo apt update
   run sudo apt upgrade
   ```
+
+Install softwares using Python PIP command
+ - https://stackoverflow.com/questions/62071515/bash-pip-command-not-found-when-using-pip-install
