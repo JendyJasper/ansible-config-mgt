@@ -138,3 +138,6 @@ Add a user as a sudo user. You should be able to run any sudo command if you are
 
 Install softwares using Python PIP command
  - https://stackoverflow.com/questions/62071515/bash-pip-command-not-found-when-using-pip-install
+
+How to Install and Configure AWS CLI on Linux
+ - https://devopscube.com/install-configure-aws-cli-linux/
